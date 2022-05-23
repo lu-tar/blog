@@ -11,19 +11,19 @@ menu:
   main:
       - name: Home
         url: 'https://628bf6774f42a00056cd100e--moonlit-biscuit-c80413.netlify.app/'
-        weight: 5
+        weight: 2
       - name: Archive
-        url: archives/
-        weight: 80
+        url: archives
+        weight: 5
+      - name: Search
+        url: search/
+        weight: 10
+      - name: Tags
+        url: tags/
+        weight: 15
       - name: Categories
         url: categories/
         weight: 20
-      - name: Tags
-        url: tags/
-        weight: 10
-      - name: Search
-        url: search/
-        weight: 99
 params:
   defaultTheme: auto
   disableThemeToggle: false
