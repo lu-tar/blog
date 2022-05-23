@@ -10,7 +10,7 @@ outputs:
 menu:
   main:
       - name: Home
-        url: 'https://www.youtube.com/watch?v=G1IbRujko-A'
+        url: 'https://628bf6774f42a00056cd100e--moonlit-biscuit-c80413.netlify.app/'
         weight: 5
       - name: Archive
         url: archives/
