@@ -1,0 +1,53 @@
+baseURL: ""
+languageCode: en-us
+title: blog_001
+theme: PaperMod
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+menu:
+  main:
+      - name: Home
+        url: 'https://www.youtube.com/watch?v=G1IbRujko-A'
+        weight: 5
+      - name: Archive
+        url: archives/
+        weight: 80
+      - name: Tags
+        url: tags
+        weight: 50
+      - name: Categories
+        url: categories/
+        weight: 20
+      - name: Tags
+        url: tags/
+        weight: 10
+      - name: CV
+        url: testcv.pdf
+        weight: 99
+      - name: Search
+        url: search/
+        weight: 99
+params:
+  defaultTheme: auto
+  disableThemeToggle: false
+  homeInfoParams:
+    Title: "Hi!"
+    Content: "Welcome to my blog"
+  socialIcons:
+    - name: linkedin
+      url: 'https://www.youtube.com/watch?v=G1IbRujko-A'
+    - name: github
+      url: 'https://www.youtube.com/watch?v=G1IbRujko-A'
+  cover:
+    linkFullImages: true
+
+  ShowBreadCrumbs: true
+
+  ShowReadingTime: true
+
+  ShowShareButtons: true
+
+  ShowPostNavLinks: true
