@@ -1,6 +1,6 @@
 baseURL: ""
 languageCode: en-us
-title: blog_001
+title: LT_BLOG_01#
 theme: PaperMod
 outputs:
     home:
