@@ -1,13 +1,13 @@
 ---
-title: "first_post"
-date: 2022-04-19T21:04:51+02:00
+title: "Note-taking with Obsidian"
+date: 2022-05-28T17:04:55+02:00
 draft: false
 tags: ["test"]
 categories: ["lorem"]
 cover:
-    image: img/surprised-cat.jpeg
-    alt: 'Wow'
-    caption: 'Image caption'
+    image: img/obsidian-logo.png
+    alt: ''
+    caption: ''
 ShowToc: true
 author: ["Luca"]
 ---
