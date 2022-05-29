@@ -10,11 +10,11 @@ cover:
     image: img/harold.png
 weight: 99
 ---
-I'm Luca Tarozzi from Bologna, :it: . I started my journey in the networking world in September 2017 doing a Cisco CCENT bootcamp held by the system integrator where I still work today. Before that I didn't have any big working experiences excluding some stages in two IT departments organized by my school, IIS Odone Belluzzi. 
+I'm Luca Tarozzi from Bologna, :it: . I started my journey in the networking world in September 2017 doing a Cisco CCENT bootcamp held by the system integrator where I still work today. Before that I didn't have any big working experiences excluding some stages in two IT departments organized by my school, IIS Odone Belluzzi. \n
 During my high school year I have worked almost exclusively with programming languages like Java and the web trio CSS, HTML and PHP. I thank my laziness and the professors who in those years made me hate programming and sparked an interest in networking.
 
 ## What am I working on?
-If 2021 and 2022 they were a restaurant menu, the main courses would be Cisco wireless and wired technologies with some appetizers and small samples of Palo Alto firewall and Cisco ESA. I don't deny that this "menu" may change in the future, we'll see.
+If 2021 and 2022 they were a restaurant menu, the main courses would be Cisco wireless and wired technologies with some appetizers and small samples of Palo Alto firewall and Cisco ESA. I don't deny that this "menu" may change in the future, we'll see.\n
 In my free time I alternate a beer with friends with projects like this website and small Python scripts.
 
 ## Why writing a blog?
