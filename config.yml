@@ -1,7 +1,8 @@
 baseURL: ""
 languageCode: en-us
-title: blog_001
+title: LT_BLOG_01#
 theme: PaperMod
+enableEmoji: true
 outputs:
     home:
         - HTML
@@ -33,12 +34,12 @@ params:
   disableThemeToggle: false
   homeInfoParams:
     Title: "Hi!"
-    Content: "Welcome to my blog"
+    Content: "Welcome to my blog! My name is Luca Tarozzi ('97,:it:'), I'm a network technician with a few years of experience in a helpdesk team.\n These articles will try to mix some personal thoughts and the theory behind the technologies I deal with every day at work."
   socialIcons:
     - name: linkedin
-      url: 'https://www.youtube.com/watch?v=G1IbRujko-A'
+      url: 'https://www.linkedin.com/in/luca-tarozzi-9ab371178/'
     - name: github
-      url: 'https://www.youtube.com/watch?v=G1IbRujko-A'
+      url: 'https://github.com/lu-tar/'
   cover:
     linkFullImages: true
 
@@ -49,3 +50,5 @@ params:
   ShowShareButtons: true
 
   ShowPostNavLinks: true
+
+  ShowReadingTime: true
