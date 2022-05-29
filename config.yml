@@ -50,5 +50,8 @@ params:
   ShowShareButtons: true
 
   ShowPostNavLinks: true
+<<<<<<< HEAD
 
   ShowReadingTime: true
+=======
+>>>>>>> abf9ecdd80afcb1dd8576e3b135257ad40f1fbb7
