@@ -11,14 +11,13 @@ cover:
 ShowToc: true
 author: ["Luca"]
 ---
-
 # Note-taking with Obsidian
-In this article [[Hugo + Netlify + GitHub]] I talked about how I setup this website with my few programming skills. In those lines I mentioned frequently markdown files and Obsidian so in this article I'm going to explain how I organize and take notes. But first let's address some questions
+In this article Hugo + Netlify + GitHub I talked about how I setup this website with my few programming skills. In those lines I mentioned frequently markdown files and Obsidian so in this article I'm going to explain how I organize and take notes. But first let's address some questions
 
-### *What is Obsidian?* 
+### What is Obsidian? 
 [Obsidian](https://obsidian.md/) is a free, open-source note-taking app which helps you link your notes to each other using hypertext with markdown files.
 
-### *Why I need to switch from OneNote, Google Drive or Evernote to Obsidian?*
+### Why I need to switch from OneNote, Google Drive or Evernote to Obsidian?
 You don't. You don't especially because Obsidian is a pain in the ass to configure and mantain a well-ordered list of notes, both useful and practical and cool-at-the-eyes, is not a simple task and I'm far from achiving it.
 [[image of a markdown file]]
 Although, I find this app very useful because with a keyboard shortcut I can open a new notes with a specific template like "Troubleshooting Cisco switch stack", link on the fly an old note called "Cisco command cheatsheet" or search all the notes tagged with "9300".
