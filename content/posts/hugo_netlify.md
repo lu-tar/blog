@@ -7,8 +7,6 @@ categories: ["Dev"]
 ShowToc: false
 cover:
     image: img/hugo_netlify.png
-    alt: 'Wow'
-    caption: 'Image caption'
 author: ["Luca"]
 ---
 # First lorem

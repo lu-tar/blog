@@ -29,6 +29,9 @@ menu:
         name: Categories
         url: /categories/
         weight: 20
+      - name: CV
+        url: 'CV.html'
+        weight: 20
 params:
   defaultTheme: auto
   disableThemeToggle: false
