@@ -1,3 +1,17 @@
+---
+title: "Note-taking with Obsidian"
+date: 2022-05-28T17:04:55+02:00
+draft: false
+tags: ["test"]
+categories: ["lorem"]
+cover:
+    image: img/obsidian-logo.png
+    alt: ''
+    caption: ''
+ShowToc: true
+author: ["Luca"]
+---
+
 # Note-taking with Obsidian
 In this article [[Hugo + Netlify + GitHub]] I talked about how I setup this website with my few programming skills. In those lines I mentioned frequently markdown files and Obsidian so in this article I'm going to explain how I organize and take notes. But first let's address some questions
 
