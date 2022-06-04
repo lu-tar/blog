@@ -5,9 +5,9 @@ draft: false
 tags: ["obsidian", "markdown", "note-taking", "hypertext"]
 categories: ["productivity"]
 cover:
-	image: img/obsidian-logo.png
-	alt: ''
-	caption: ''
+ image: img/obsidian-logo.png
+ alt: ''
+ caption: ''
 ShowToc: true
 author: ["Luca"]
 ---
@@ -29,7 +29,7 @@ Obsidian is not a native collaborative app but maybe there are some plugins and 
 ### Are the notes automatically sync to a cloud?
 No, the files are store locally in your machine and even with the paid functionality [Sync](https://obsidian.md/sync) there is no Obsidian cloud.
 
-## First setup 📋
+## First setup
 These are my mandatory steps to do before start using the application:
 
 - Go to Settings
@@ -49,7 +49,7 @@ These are my mandatory steps to do before start using the application:
 
 That's a lot :skull: but we are almost done.
 
-## Folders, tags and links 📁🔗
+## Folders, tags and links
 ### Folders
 Once we finished the first setup we can start working with Obsidian keeping in mind that is a tool based on hypertext or "now I can link together two or more files", so for this reason I like to have a few folders and create a logical structure using links as much as possible.
 
