@@ -5,9 +5,9 @@ draft: false
 tags: ["obsidian", "markdown", "note-taking", "hypertext"]
 categories: ["productivity"]
 cover:
-	image: img/obsidian-logo.png
-	alt: ''
-	caption: ''
+  image: img/obsidian-logo.png
+  alt: ''
+  caption: ''
 ShowToc: true
 author: ["Luca"]
 ---
