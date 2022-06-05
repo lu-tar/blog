@@ -7,8 +7,9 @@ categories: ["Personal stuff"]
 ShowToc: false
 author: ["Luca"]
 cover:
-    image: img/harold.png
-    caption: 'Me, studyng for the Cisco ENCOR certification'
+	image: img/harold.png
+ShowToc: true
+author: ["Luca"]
 weight: 99
 ---
 I'm Luca Tarozzi from Bologna, :it: . I started my journey in the networking world in September 2017 doing a Cisco CCENT bootcamp held by the system integrator where I still work today. Before that I didn't have any big working experiences excluding some stages in two IT departments organized by my school, IIS Odone Belluzzi.
