@@ -3,9 +3,11 @@ title: "Note-taking with Obsidian"
 date: 2022-05-28T17:04:55+02:00
 draft: false
 tags: ["obsidian", "markdown", "note-taking", "hypertext"]
-categories: ["Productivity"]
+categories: ["productivity"]
 cover:
 	image: img/obsidian-logo.png
+	alt: ''
+	caption: ''
 ShowToc: true
 author: ["Luca"]
 ---
@@ -34,7 +36,7 @@ These are my mandatory steps to do before start using the application:
 		- Editor
 			- Turn on **live preview** Editor -> under General you must disable Legacy Mode. Set Default editing mode to "Live Preview".
 			- If you don't want a **centered text** go to Settings -> Editor -> under Display -> Readable line lenght
-			- Turn on **fold heanding** and **fold indent** to collapse text under headings or lists
+			- Turn on **fold heading** and **fold indent** to collapse text under headings or lists
 		- File and links
 			- Setup the **new notes default folder**
 			- Setup the **attachment folder**
@@ -44,7 +46,7 @@ These are my mandatory steps to do before start using the application:
 			- Set the `Toggle code` shortcut to `CTRL + SHIFT + <`
 			- Set the Template shortcut `CTRL + SHIFT + I`
 
-That's a lot :skull: but we are almost done.
+That's a lot :skull: but we are almost done. Take this cute dog as a reward ![a cute dog](/gif/fluffy-dog.gif)
 
 ## Folders, tags and links
 ### Folders
@@ -62,10 +64,10 @@ My Vault
 
 - **Archive**: where i store the notes of finished activities or tickets.
 - **Attachments**: screenshots are stored in this folder.
-- **KB**: this is the folder dedicated to my knowledge base where I put summaries of official guides or community posts with the links to each sources. If I find a note particulary interesting or well done outside of KB I will move that note in that folder.
+- **KB**: this is the folder dedicated to my knowledge base where I put summaries of official vendor's guides or community posts with the links to each sources. If I find a note particulary useful or well done outside of KB I will move that note in that folder.
 
 ### Tags
-Tags are self explanatory, you can use them to mark a note with a category like "multicast" or "BGP" to summarize in a few words the content of the note.
+Tags are self explanatory, you can use them to mark a note with a category like "multicast" or "BGP" to summarize in a few words the content of the note. More important connection are done by using links.
 
 ### Links
 Links are the core of Obsidian and the syntax is the following
@@ -78,17 +80,19 @@ With `!` before the name I'm displaying the content of the link directly in the 
 ## Templates
 Templates will save you a lot of time putting in place a blueprint of a note with very few steps so you don't need to rewrite anything.
 
+Try adding these two file to the Templates folder: [a simple template](https://raw.githubusercontent.com/lu-tar/blog/master/static/files/Template_1.md) and a [more personalized one](https://raw.githubusercontent.com/lu-tar/blog/master/static/files/Template_2.md). (I'm not sure but someday I will publish my personal templates).
 
-## How I link together notes in Obsidian
+Now you can open a new emtpy note and with `CTRL + SHIFT + I` you can choose the template previously added.
 
+## Final notes
+With this article I touched only the point of the iceberg of this application but it enough ice to start taking notes without losing time rewriting what has already been done with the help of templates and links. 
+
+My final suggestions to minimize writing times and speed up the troubleshooting phase of the problem are:
+- keep the KB folder as clean as possibile dividing them by vendor
+- I recommend moving old notes to the archive so that the new notes are easily accessible
+- "recycle" old notes as much as possibile to minimize writing times and speed up the troubleshooting phase of the problem. Instead of opening a note with `Ctrl + N` search first with `Ctl + O` if a note has already been made on that topic
 
 ### Reference
-1. [Zettelkasten in Obsidian](https://youtu.be/E6ySG7xYgjY?t=137)
-2. [Obsidian for beginners](https://www.youtube.com/watch?v=QgbLb6QCK88)
+1. [YouTube | Zettelkasten in Obsidian](https://youtu.be/E6ySG7xYgjY?t=137)
+2. [YouTube | Obsidian for beginners](https://www.youtube.com/watch?v=QgbLb6QCK88)
 3. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
-
-
-
-
-
-
