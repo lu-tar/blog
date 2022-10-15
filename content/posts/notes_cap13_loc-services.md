@@ -5,7 +5,7 @@ draft: false
 tags: ["location", "enwlsi", "300-430", "certification","encore", "cisco"]
 categories: ["notes"]
 cover:
-  image: img/curious_cat.png
+  image: img/curious_cat.jpg
   alt: ''
   caption: ''
 ShowToc: true
