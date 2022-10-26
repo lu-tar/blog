@@ -1,7 +1,7 @@
 ---
 title: "Static website with Hugo and Netlify"
 date: 2022-05-28T14:01:09+02:00
-draft: false
+draft: true
 tags: ["hugo", "netlify", "github", "obsidian", "markdown", "static website", "framework"]
 categories: ["Dev"]
 ShowToc: false

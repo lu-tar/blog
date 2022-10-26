@@ -12,7 +12,7 @@ ShowToc: true
 author: ["Luca"]
 weight: 99
 ---
-I'm Luca Tarozzi from Bologna, :it: . I started my journey in the networking world in September 2017 doing a Cisco CCENT bootcamp held by the system integrator where I still work today. Before that I didn't have any big working experiences excluding some stages in two IT departments organized by my school, IIS Odone Belluzzi.
+I'm Luca Tarozzi from :it: . I started my journey in the networking world in September 2017 doing a Cisco CCENT bootcamp held by the system integrator where I still work today. Before that I didn't have any big working experiences excluding some stages in two IT departments organized by my school.
 
 During my high school year I have worked almost exclusively with programming languages like Java and the web trio CSS, HTML and PHP. I thank my laziness and the professors who in those years made me hate programming and sparked an interest in networking.
 
@@ -32,4 +32,4 @@ I think that writing a blog combines these things well:
 Also I started this blog as a personal project without the presumption that it will become an authoritative source of information. Nevertheless, I will strive to make the articles less chaotic as possible.
 
 ## If you are interested in my CV
-You can find it on my GitHub page as a resource of this Hugo-based webiste. I don't have any social network but fell free to visits my [LinkedIn page](https://www.linkedin.com/in/luca-tarozzi-9ab371178/) o write email to `l.tar@protonmail.com`
+Feel free to visits my [LinkedIn page](https://www.linkedin.com/in/luca-tarozzi-9ab371178/) and send me a message or o write an email to `l.tar@protonmail.com`

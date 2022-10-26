@@ -22,7 +22,7 @@ author: ["Luca"]
 > UWB is useful for [real-time location systems](https://en.wikipedia.org/wiki/Real-time_location_system "Real-time location system"), and its precision capabilities and low power make it well-suited for radio-frequency-sensitive environments, such as hospitals. UWB is also useful for peer-to-peer fine ranging, which allows many applications based on relative distance between two entities.
 
 The frames are marked with a timestamp and a [time of flight (ToF)](https://en.wikipedia.org/wiki/Wi-Fi_positioning_system#Time_of_flight_based) is calculated to estimate the range between client and access point.
-![[Time_of_flight.png]]
+![Time of flight](/img/tof.png)
 
 **Bluetooth Low Energy BLE** (version 4.0 made in 2010) uses connectionless message to exchange Tx power information and triangulate the positions of other BLE objects.
 
