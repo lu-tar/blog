@@ -12,7 +12,7 @@ ShowToc: true
 author: ["Luca"]
 ---
 # ENCORE 350-401 | Architecture
-These are my notes, both in :it: ad :eng:, on various topics regarding the Cisco Encore 350-401 certification "Architecture" [section](https://learningnetwork.cisco.com/s/encor-exam-topics).
+These are my notes, both in :it: ad :en:, on various topics regarding the Cisco Encore 350-401 certification "Architecture" [section](https://learningnetwork.cisco.com/s/encor-exam-topics).
 
 These notes are made of lists and very schematic paragraphs that summarise a lot (too much) the topics that are explained in the book.
 
