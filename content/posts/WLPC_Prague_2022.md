@@ -13,16 +13,11 @@ author: ["Luca"]
 ---
 # WLPC Prague 2022
 ## Notes from the event videos
-These are notes from the lectures on the recent Wireless Lan Professionals congress which was held in Prague in October 2022.
-
-1. Automated Root Cause Analysis in Wireless Networks | Karan Gupta
-2. Designing Wi-Fi in the Worst RF in the World | Jim Palmer
-3. 10 Wireshark Tips in 10 Minutes | Andrew McHale
-4. Why Did the Zebra Cross the Road? | Stephen Cooper
-5. The Big Scary World of Network Integration and Automation | Peter Mackenzie
+These are notes from lectures on the recent Wireless Lan Professionals congress which was held in Prague in October 2022.
 
 ### [Automated Root Cause Analysis in Wireless Networks | Karan Gupta](https://www.youtube.com/watch?v=34m0u23_izY)
 Why do we need automation during RCA in wireless networks?
+
 Issue can be categorized in:
 1. Connectivity issue. We can monitor tha AP state or the client state looking at debugs or logs
 2. Performance or application issues are more subtle.
