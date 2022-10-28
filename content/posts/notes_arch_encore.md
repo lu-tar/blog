@@ -5,7 +5,7 @@ draft: false
 tags: ["encore", "350-401", "certification","encore", "cisco"]
 categories: ["notes"]
 cover:
-image: img/surprised-cat.jpeg
+image: img/bridge.jpg
 alt: ''
 caption: ''
 ShowToc: true
