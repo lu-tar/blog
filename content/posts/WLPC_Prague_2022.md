@@ -1,7 +1,7 @@
 ---
 title: "WLPC Prague 2022"
 date: 2022-10-28T11:22:19+02:00
-draft: false
+draft: true
 tags: ["wlpc", "wireless", "wireshark","congress", "talk", "automation", "troubleshooting", "design", "roaming"]
 categories: ["notes"]
 cover:
