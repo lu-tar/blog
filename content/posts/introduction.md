@@ -6,8 +6,7 @@ tags: ["cv", "whoami"]
 categories: ["Personal stuff"]
 ShowToc: false
 author: ["Luca"]
-cover:
-  image: img/harold.png
+
 ShowToc: true
 author: ["Luca"]
 weight: 99

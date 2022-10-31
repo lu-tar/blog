@@ -1,5 +1,5 @@
 ---
-title: "ENCORE 350-401 | Architecture"
+title: ":books: ENCORE 350-401 | Architecture"
 date: 2022-10-27T16:59:10+02:00
 draft: false
 tags: ["encore", "350-401", "certification","encore", "cisco"]
