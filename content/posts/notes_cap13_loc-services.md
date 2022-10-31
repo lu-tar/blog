@@ -1,5 +1,5 @@
 ---
-title: ":books: ENWLSI 300-430 | Location services"
+title: "ENWLSI 300-430 | Location services"
 date: 2022-10-15T17:10:02+02:00
 draft: false
 tags: ["location", "enwlsi", "300-430", "certification","encore", "cisco"]
