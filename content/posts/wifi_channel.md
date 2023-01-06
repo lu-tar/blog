@@ -1,7 +1,7 @@
 ---
 title: "Wi-Fi channels"
 date: 2022-12-26T16:13:53+02:00
-draft: true
+draft: false
 tags: ["wireless", "channel", "PHY", "Channelyzer"]
 categories: ["in-depth"]
 cover:
@@ -12,6 +12,9 @@ ShowToc: true
 author: ["Luca"]
 ---
 # Title
-:skull:
 
 ![A speedtest on Channelyzer software](/gif/chzer_speedtest.gif)
+
+# Title
+
+![Downloading a big file on Channelyzer software](/gif/chzer_download.gif)
