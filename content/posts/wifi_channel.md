@@ -14,4 +14,4 @@ author: ["Luca"]
 # Title
 :skull:
 
-![a cute dog](/video/chzer_speedtest.gif)
+![A speedtest on Channelyzer software](/video/chzer_speedtest.gif)
