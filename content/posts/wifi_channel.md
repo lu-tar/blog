@@ -18,3 +18,19 @@ author: ["Luca"]
 # Title
 
 ![Downloading a big file on Channelyzer software](/gif/chzer_download.gif)
+
+# Title
+
+![Downloading a big file on Channelyzer software](/gif/chzer_download_2.gif)
+
+# Title
+
+![Downloading a big file on Channelyzer software](/gif/chzer_streaming.gif)
+
+# Title
+
+![Downloading a big file on Channelyzer software](/gif/chzer_video.gif)
+
+# Title
+
+![Downloading a big file on Channelyzer software](/gif/chzer_download.gif)
