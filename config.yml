@@ -1,6 +1,6 @@
 baseURL: ""
 languageCode: en-us
-title: LT_BLOG_01#
+title: LUTAR_BLOG#
 theme: PaperMod
 enableEmoji: true
 outputs:
@@ -11,7 +11,7 @@ outputs:
 menu:
   main:
       - name: Home
-        url: 'https://master--moonlit-biscuit-c80413.netlify.app/'
+        url: 'https://lutar.netlify.app/'
         weight: 2
       - identifier: archive
         name: Archive
