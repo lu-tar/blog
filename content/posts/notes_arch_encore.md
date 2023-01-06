@@ -5,7 +5,7 @@ draft: false
 tags: ["encore", "350-401", "certification","encore", "cisco"]
 categories: ["notes"]
 cover:
-  image: img/bridge.jpg
+  image: img/bridge.png
   alt: ''
   caption: ''
 ShowToc: true

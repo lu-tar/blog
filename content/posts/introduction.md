@@ -3,7 +3,7 @@ title: "Who am I"
 date: 2022-05-29T15:38:12+02:00
 draft: false
 tags: ["cv", "whoami"]
-categories: ["Personal stuff"]
+categories: ["personal stuff"]
 ShowToc: false
 author: ["Luca"]
 
