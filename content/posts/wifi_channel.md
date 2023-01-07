@@ -13,7 +13,7 @@ author: ["Luca"]
 ---
 # Wi-Fi channels
 
-![[/gif/old-tv.gif]]
+![](/gif/old-tv.gif)
 
 This article is an overview of what I've learned in the past few years about Wi-fi channels and the topics floating around this key concept of wireless telecommunication.
 The external resources I've used are in the bottom of the page.
@@ -41,27 +41,19 @@ In the next section I'm going to unpack different concepts around the "wireless 
 
 ### OFDM vs DSSS encoding scheme or "why a Wi-Fi channel has this shape?"
 
-802.11g – ERP-OFDM // 802.11a – OFDM vs 802.11b – HR/DSSS
-
 > The 802.11 standard specifies a spectral mask which defines the permitted power distribution across each channel. The spectral mask requires the signal be attenuated to certain levels (from its peak amplitude) at specified frequency offsets. The spectral mask used for the 802.11b standard. While the energy falls off very quickly from its peak, it is interesting to note the RF energy that is still being radiated at other channels.
-![[Pasted image 20230107011439.png]]
-![[channels.png]]
+![DSSS channel](spectral_dsss.png)
+![2.4 GHz channels on Channelyzer](channels.png)
 
 > For the 802.11a, 802.11g, 802.11n and 802.11ac standards that are using the OFDM encoding scheme, they have a spectral mask that looks entirely different. OFDM allows for a more dense spectral efficiency, thus it gets higher data throughput than used with the BPSK/QPSK techniques in 802.11b
 
-![[Pasted image 20230107011514.png]]
-![[channel_square.png]]
+![OFDM channel](spectral_ofdm.png)
+![OFDM channel](channel_square.png)
 
 ### Channel bonding or "why I need to be careful with channel bandwidth"
 [# Mama Says Channel Bonding is the Devil by Nick Shoemaker](https://blogs.arubanetworks.com/solutions/mama-says-channel-bonding-is-the-devil/)
 
 ### The Good, the Bad and the Ugly utilization of a channel
-[[Channel utilization]]
-[How do we handle Channel Busy on RF and the factors that could contribute?](https://community.arubanetworks.com/browse/articles/blogviewer?blogkey=57313b3d-f07e-4bbb-8ada-41ee62fe68ce) from Aruba
-[Old but gold, AireOS DCA Dynamic Channel Assignment](https://mrncciew.com/2013/03/16/configuring-dca/)
-[Wi-Fi Airtime Utilization](https://www.csbtech.net/blog/2016/3/1/airtime-fxjhg)
-*This was the hardest part of the article*
-
 Channel utilization is a layer one measurement of the percentage of time a 802.11 channel is used above a amplitude threshold, usually of -95 dBm, within a timespan (which is mostly 30 seconds in all the Channelyzer gifs in this article).
 
 Some tech articles write that the definition of airtime and channel utilization are interchangeable **but** [Joel Crane on 2018 Wi-Fi Trek conference](https://www.youtube.com/watch?v=KAYEo_V9Gqc) split those two definitions:
@@ -73,10 +65,10 @@ In this Channelyzer capture of a file transfer test (channel 116, 802.11ac) we c
 - the light blue utilization graph rising from 20 to 100%
 - the whaterfall graph changing color from blue (not busy) to green and finally red (fully occupied).
 - ignore my mouse overing on things :alien:
-![A speedtest on Channelyzer software](chzer_download.gif)
+![File transfer capture on Channelyzer software](chzer_download.gif)
 
 I tested the same file transfer on the super chaotic 2.4 GHz spectrum in my home (802.11g, channel 13)
-![[/img/chzer_download_2.gif]]
+![File transfer capture using 802.11g](/img/chzer_download_2.gif)
 
 We can see 
 - the utilization threshold set at -85 dBm trying to cover the massive background RF noise
