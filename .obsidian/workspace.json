@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3dbd10397cf72feb",
+        "id": "56a474656081833d",
         "type": "tabs",
         "children": [
           {
-            "id": "f5d6bfb584f8fcd0",
+            "id": "b5e67fa9d7ab7a08",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -136,11 +136,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f5d6bfb584f8fcd0",
+  "active": "b5e67fa9d7ab7a08",
   "lastOpenFiles": [
-    "content/posts/hugo_netlify.md",
-    "content/posts/note-taking_obsidian.md",
+    "img/80211acspectavg.PNG.md",
     "content/posts/wifi_channel.md",
-    "content/archives.md"
+    "static/img/spectral_dsss.png",
+    "static/img/spectral_ofdm.png",
+    "static/img/hyperlocation_ring_antennas.jpg",
+    "static/img/hyperlocation_ring.jpg",
+    "static/img/hyperlocation.png",
+    "static/img/hugo_netlify.png",
+    "static/img/harold.png",
+    "static/img/curious_cat.jpg"
   ]
 }

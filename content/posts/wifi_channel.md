@@ -40,20 +40,24 @@ In the next section I'm going to unpack different concepts:
 4. Co-channel interference
 5. Channel assignment algorithms: Cisco DCA
 
-### OFDM vs DSSS and spectrum mask or "what the hell am I watching?!? 🤌"
-The first day I opened Channelyzer I thought "What the hell am I watching?!" and that's the root question of this paragraph: why we see a *hill* shape or a *squared shape* 
+### Spectral mask or "what the hell am I watching?!? 🤌"
+The first day I opened Channelyzer I thought "What the hell am I watching?!" and that's the root question of this paragraph: why sometimes we see a *hill* shape, a *squared/panettone* shape or neither of them.
 
+![](/img/80211spectversus.png)
+![](/img/80211acspectavg.PNG)
+![](/img/80211sensorspect.PNG)
+
+First of all: what is a spectral mask? 
 OFDM ad DSSS are the two major encoding scheme that I've learned
 That answer the question "how are bits actually carried over the air with radio signals"
 
 > The 802.11 standard specifies a spectral mask which defines the permitted power distribution across each channel. The spectral mask requires the signal be attenuated to certain levels (from its peak amplitude) at specified frequency offsets. The spectral mask used for the 802.11b standard. While the energy falls off very quickly from its peak, it is interesting to note the RF energy that is still being radiated at other channels.
-![DSSS channel](/img/spectral_dsss.png)
-![2.4 GHz channels on Channelyzer](/img/channels.png)
+
+![OFDM channel](/img/spectral_dsss.png)
 
 > For the 802.11a, 802.11g, 802.11n and 802.11ac standards that are using the OFDM encoding scheme, they have a spectral mask that looks entirely different. OFDM allows for a more dense spectral efficiency, thus it gets higher data throughput than used with the BPSK/QPSK techniques in 802.11b
 
 ![OFDM channel](/img/spectral_ofdm.png)
-![OFDM channel](/img/channel_square.png)
 
 ### Channel bonding or "why I need to be careful with 40 MHz on 802.11n, 80 or 160 MHz"
 [# Mama Says Channel Bonding is the Devil by Nick Shoemaker](https://blogs.arubanetworks.com/solutions/mama-says-channel-bonding-is-the-devil/)
