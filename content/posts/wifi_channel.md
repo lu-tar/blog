@@ -13,7 +13,7 @@ author: ["Luca"]
 ---
 # Wi-Fi channels
 
-![/gif/old-tv.gif]
+![[/gif/old-tv.gif]]
 
 This article is an overview of what I've learned in the past few years about Wi-fi channels and the topics floating around this key concept of wireless telecommunication.
 The external resources I've used are in the bottom of the page.
@@ -101,26 +101,3 @@ What can cause bad utilization of a channel?
 	- Interferences over (rising collisions) and above (lowering SNR) the CCA ED threshold (Clear Channel Assessment, Energy Detection):
 		- "Friendly fire" interferences like cranking up to the maximun transmit power of all the access point in a semi-close enviroment.
 		- "Rogue" interferences from access point in near buildings and interferences from non-Wi-Fi signals in the same spectrum of Wi-Fi
-# Title
-
-![A speedtest on Channelyzer software](/gif/chzer_speedtest.gif)
-
-# Title
-
-![Downloading a big file on Channelyzer software](/gif/chzer_download.gif)
-
-# Title
-
-![Downloading a big file on Channelyzer software](/gif/chzer_download_2.gif)
-
-# Title
-
-![Downloading a big file on Channelyzer software](/gif/chzer_streaming.gif)
-
-# Title
-
-![Downloading a big file on Channelyzer software](/gif/chzer_video.gif)
-
-# Title
-
-![Downloading a big file on Channelyzer software](/gif/chzer_download.gif)
