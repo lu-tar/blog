@@ -42,13 +42,13 @@ In the next section I'm going to unpack different concepts around the "wireless 
 ### OFDM vs DSSS encoding scheme or "why a Wi-Fi channel has this shape?"
 
 > The 802.11 standard specifies a spectral mask which defines the permitted power distribution across each channel. The spectral mask requires the signal be attenuated to certain levels (from its peak amplitude) at specified frequency offsets. The spectral mask used for the 802.11b standard. While the energy falls off very quickly from its peak, it is interesting to note the RF energy that is still being radiated at other channels.
-![DSSS channel](spectral_dsss.png)
-![2.4 GHz channels on Channelyzer](channels.png)
+![DSSS channel](/img/spectral_dsss.png)
+![2.4 GHz channels on Channelyzer](/img/channels.png)
 
 > For the 802.11a, 802.11g, 802.11n and 802.11ac standards that are using the OFDM encoding scheme, they have a spectral mask that looks entirely different. OFDM allows for a more dense spectral efficiency, thus it gets higher data throughput than used with the BPSK/QPSK techniques in 802.11b
 
-![OFDM channel](spectral_ofdm.png)
-![OFDM channel](channel_square.png)
+![OFDM channel](/img/spectral_ofdm.png)
+![OFDM channel](/img/channel_square.png)
 
 ### Channel bonding or "why I need to be careful with channel bandwidth"
 [# Mama Says Channel Bonding is the Devil by Nick Shoemaker](https://blogs.arubanetworks.com/solutions/mama-says-channel-bonding-is-the-devil/)
@@ -65,7 +65,7 @@ In this Channelyzer capture of a file transfer test (channel 116, 802.11ac) we c
 - the light blue utilization graph rising from 20 to 100%
 - the whaterfall graph changing color from blue (not busy) to green and finally red (fully occupied).
 - ignore my mouse overing on things :alien:
-![File transfer capture on Channelyzer software](chzer_download.gif)
+![File transfer capture on Channelyzer software](/gif/chzer_download.gif)
 
 I tested the same file transfer on the super chaotic 2.4 GHz spectrum in my home (802.11g, channel 13)
 ![File transfer capture using 802.11g](/img/chzer_download_2.gif)
