@@ -68,13 +68,19 @@ In this Channelyzer capture of a file transfer test (channel 116, 802.11ac) we c
 ![File transfer capture on Channelyzer software](/gif/chzer_download.gif)
 
 I tested the same file transfer on the super chaotic 2.4 GHz spectrum in my home (802.11g, channel 13)
-![File transfer capture using 802.11g](/img/chzer_download_2.gif)
+![File transfer capture using 802.11g](/gif/chzer_download_2.gif)
 
 We can see 
 - the utilization threshold set at -85 dBm trying to cover the massive background RF noise
 - the light blue utilization graph rising from a baseline of 20 to 80%
 - the whaterfall graph is a rainbow of red and green because of co-channel interference from other access point in other apartments
 - in the fart left is visible the signal from my volumetric sensor :heavy_exclamation_mark:
+
+The capture of a streaming service data flow
+![](/gif/chzer_streaming.gif)
+
+The capture of a Youtube data flow
+![](/gif/chzer_video.gif)
 
 The tricky thing about this percentage value is that the same amount of throughput can occupy the RF medium with different percentages because lower speed modulation pack fewer bits than higher speed modulation into a given time interval. So a 10 Mbps throughput require different channel utilization depending on the capabilities of a wireless client.
 
