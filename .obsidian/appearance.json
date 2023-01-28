@@ -1,3 +1,6 @@
 {
-  "accentColor": ""
+  "accentColor": "",
+  "translucency": true,
+  "textFontFamily": "",
+  "nativeMenus": false
 }

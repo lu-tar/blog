@@ -20,7 +20,7 @@ This article is a mix of what I've learned in the past few years and more recent
 
 The external references I've used are in the bottom of the page. Links to the single paragraphs are in the table of contents. Finally this [article](https://howiwifi.com/2020/07/03/spectrum-analysis-phys-and-interferers/) by Amazon wireless engineer Jeremy Sharp and the agnostic book *"802.11 Wireless Networks"* by Matthew S. Gast were both a huge inspiration while writing all this crap down. Go read it both!
 
-## What is a wireless channel? 👀
+## What is a wireless channel?
 Before addressing the individual topics, this is the definition of a wireless channel based on what I've learned so far: 
 
 >a channel is a numbered, shared, layer 1 domain with a specific bandwidth (often expressed in MHz) and a center frequency.
@@ -30,7 +30,7 @@ Let's unpack the little, over condensed, definition of channel:
 - A RF channel is a **shared** medium because, unlike IEEE 802.3 Ethernet which is protected from the outside, there is no "a shielded twisted pair" over the air and interferers and ground noise are variables to be strongly taken into consideration.
 - A RF channel is a **layer 1 domain** because it sits alongside 802.3 in the bottom of the ISO-OSI pile.
 - A Wi-Fi RF channel uses **bandwidth** of 20 MHz for OFDM-based transmissions and 22 MHz for DSSS-based, but we can bond channel together and double the bandwidth up to 160 MHz. 20, 40, 80 and 160 MHz are the wireless enterprise standards but some technologies can use 1 (like Bluetooth), 5 or 10 MHz bandwidth.
-- The **center frequency** of a RF channel is the peak frequency where most of the information are transmitted and isolated from other channels. 2.4 GHz and 5 GHz are the main portion of the spectrum used by the enterprise wireless vendors.
+- The **center frequency** of a RF channel is the peak frequency where most of the information are transmitted.
 
 This definition can surely be expanded according to your background but for a networking engineer with a mixed knowledge of routing and switching and wireless is a good starting point because it encapsulates all the core variables.
 
@@ -43,16 +43,16 @@ In the next section I'm going to unpack different concepts:
 4. Co-channel interference
 5. Channel assignment algorithms: Cisco DCA
 
-### Spectral mask or "what the hell am I watching?!? 🤌"
-The first day I opened Channelyzer I thought "What the hell am I watching?!" and that's the root question of this paragraph: why sometimes we see a *hill* shape, a *squared/panettone* shape or neither of them, during a RF analysis.
+### Spectral mask or "what the hell am I watching?!?"
+The first day I opened Channelyzer I thought "What the hell am I watching?!" and that's the root question of this paragraph: why sometimes we see a *hill* shape, a *squared* or *panettone* shape or neither of them, during a RF analysis.
 
 ![](/img/80211spectversus.png)
 ![](/img/80211acspectavg.PNG)
 ![](/img/80211sensorspect.PNG)
 
-The *thing that I'm seeing on the screen* during a RF is a spectral mask which is a set of rules that confine a transmission in a dedicated slice of the spectrum preventing leakage of signal on the adjacent channels.
+The *thing that I'm seeing on the screen* during a RF analysis is the live representation of a spectral mask which is a set of rules that confine a transmission in a dedicated slice of the spectrum preventing leakage of signal on the adjacent channels.
 
-Wikipedia helps us with this definition ==ADD FOOTNOTE== [^1]:
+Wikipedia helps us with this definition [^1]:
 > The spectral mask is generally intended to reduce adjacent-channel interference by limiting excessive radiation at frequencies beyond the necessary bandwidth. Attenuation of these spurious emissions is usually done with a band-pass filter, tuned to allow through the correct center frequency of the carrier wave, as well as all necessary sidebands.
 
 Bits are carried over the air with radio signals using digital encoding schemes which are DSSS and OFDM. Both have different spectral masks:
@@ -71,7 +71,7 @@ Everything that is not following this standards is in many cases a interference 
 
 ==ADD FOOTNOTE==
 
-### The Good, the Bad and the Ugly utilization of a channel 📉
+### The Good, the Bad and the Ugly utilization of a channel
 Channel utilization is a layer one measurement of the percentage of time a 802.11 channel is used above a amplitude threshold, usually of -95 dBm, within a time-span (which is mostly 30 seconds in all the gifs in this article).
 
 Some tech articles write that the definition of airtime and channel utilization are interchangeable **but** Joel Crane on 2018 Wi-Fi Trek conference ==ADD FOOTNOTE== splits those two definitions:
@@ -94,8 +94,8 @@ So when high utilization is a bad sign of **link** **congestion** and when is go
 Wrapping up, what can cause bad utilization of a channel?
 - A **very high number of clients**, regardless of the protocol used, will always downgrade their datarates with the increasing number of stations under an access point. This effect is 10x more impacful with older protocols in the 2.4 GHz spectrum.
 - Low SNR caused by
-	- Interferences both over and above the CCA ED threshold (Clear Channel Assessment, Energy Detection). The first will generate a rising number collisions, the second will in fact raise the noise floor. ==ADD FOOTNOTE==
-		- Wi-Fi *"Friendly fire" interferences* caused by a overuse of high transmit power or by a bad channel plan or by a bad positioning of access point.
+	- Interferences both over and above the CCA threshold (Clear Channel Assessment for energy detection, signal detection and network allocation vector). The first will generate a rising number collisions, the second will in fact raise the noise floor. ==ADD FOOTNOTE==
+		- Wi-Fi *"friendly fire" interferences* caused by a overuse of high transmit power, bad channel plan or bad positioning of access point.
 		- Wi-Fi *rogue interferences* like access point in near buildings of your campus.
 		- *non-Wi-Fi* interferences trasmitting in the same spectrum of Wi-Fi.
 
@@ -113,7 +113,7 @@ In the first capture of the file transfer test we can see:
 - ignore my mouse hovering on things :alien:
 ![File transfer capture on Channelyzer software](/gif/chzer_download.gif)
 
-I tested the same file transfer on The Ugly 💀 super chaotic 2.4 GHz spectrum in my home (802.11n, channel 13):
+I tested the same file transfer on The Ugly :skull: super chaotic 2.4 GHz spectrum in my home (802.11n, channel 13):
 ![File transfer capture using 802.11g](/gif/chzer_download_2.gif)
 
 We can see 
@@ -130,9 +130,16 @@ The capture of a streaming service data flow
 The capture of a YouTube data flow
 ![](/gif/chzer_video.gif)
 
-### Why I need to be careful with 40 MHz, 80 or 160 MHz 🔪
-Take 
-Article by Nick Shoemaker from Aruba ==ADD FOOTNOTE== [Mama Says Channel Bonding is the Devil by Nick Shoemaker](https://blogs.arubanetworks.com/solutions/mama-says-channel-bonding-is-the-devil/)
+### Why I need to be careful with 40 MHz, 80 or 160 MHz
+
+The same question can be formulate as: *during the troubleshooting phase or the design phase of a wireless network, do we need to take into consideration the channel overlap (both co-channel interference and adjacent channel interference)?* If high-demand application are in use, the answer is 90% of the time **yes** because, the wireless protocol being "polite" and "listen before you talk" type of protocol, as soon there is channel overlap, data corruption and collisions start to occur, clients downgrade their data rates which leads to a drop of performance and packet loss.
+
+And the remaining 10%? The impact of channel overlap is not a 0 or 1 thing because co-channel interference is strictly inevitable and problems can be highly correlated with the application resilience or the type of client, more precisely, its roaming algorithm or Keith Parsons's [green diamond](https://wlanprofessionals.com/greendiamond/); for example we can have different performance with the same application on a client which roams using RSSI only versus more advanced roaming algorithms that include SNR in the . Therefore an application can work fine also with overlapping channels within certain limits.
+
+Now, knowing that co-channel and adjacent channel interference are an important variable, we can going back to the title paragraph and reflect on how wide channels can be disruptive in a wireless network.
+
+### Channel assignment algorithms: Cisco DCA
+
 
 https://www.youtube.com/watch?v=TGqtsRaoj_w
 
@@ -146,6 +153,9 @@ https://www.youtube.com/watch?v=TGqtsRaoj_w
 - [How do we handle Channel Busy on RF and the factors that could contribute?](https://community.arubanetworks.com/browse/articles/blogviewer?blogkey=57313b3d-f07e-4bbb-8ada-41ee62fe68ce) from Aruba
 - [Old but gold, AireOS DCA Dynamic Channel Assignment](https://mrncciew.com/2013/03/16/configuring-dca/)
 - [Wi-Fi Airtime Utilization](https://www.csbtech.net/blog/2016/3/1/airtime-fxjhg)
+- Article by Nick Shoemaker from Aruba [Mama Says Channel Bonding is the Devil by Nick Shoemaker](https://blogs.arubanetworks.com/solutions/mama-says-channel-bonding-is-the-devil/)
+- [Ekahau - Demystifying Wi-Fi: Channel Planning Made Simple](https://youtu.be/TGqtsRaoj_w?t=1088)
+- 
 
 ## Da aggiungere
 - In relation of 802.11b [Clear channel assessment attack](https://en.wikipedia.org/wiki/Clear_channel_assessment_attack)
