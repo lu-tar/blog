@@ -136,12 +136,12 @@ The same question can be formulate as: *during the troubleshooting phase or the 
 
 And the remaining 10%? The impact of channel overlap is not a 0 or 1 thing because co-channel interference is strictly inevitable and problems can be highly correlated with the application resilience or the type of client, more precisely, its roaming algorithm or Keith Parsons's [green diamond](https://wlanprofessionals.com/greendiamond/); for example we can have different performance with the same application on a client which roams using RSSI only versus more advanced roaming algorithms that include SNR in the . Therefore an application can work fine also with overlapping channels within certain limits.
 
-Now, knowing that co-channel and adjacent channel interference are an important variable, we can going back to the title paragraph and reflect on how wide channels can be disruptive in a wireless network.
+Now, knowing that co-channel and adjacent channel interference are an important variable, we can going back to the title paragraph and reflect on how wide channels can be disruptive in a wireless network starting from this image
+![](/img/5channels.png)
+So if we double the channel bandwidth, we double the data throughput but we reduce drastically the number of channels available risking a "friendly fire" interference which is proportionally dangerous to the number of the access point in the same area.
 
 ### Channel assignment algorithms: Cisco DCA
 
-
-https://www.youtube.com/watch?v=TGqtsRaoj_w
 
 ## References
 - 802.11 Wireless Networks by Matthew Gast (Amazon [link](https://www.amazon.it/802-11-Wireless-Networks-Definitive-Guide/dp/0596100523/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1PGLL3OA6W6QZ&keywords=Wireless+Networks+by+Matthew+Gast&qid=1673100670&sprefix=wireless+networks+by+matthew+gast%2Caps%2C151&sr=8-1))
