@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/wifi_channel.md",
+                "file": "content/posts/note-taking_obsidian.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/wifi_channel.md",
+                "file": "content/posts/note-taking_obsidian.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/wifi_channel.md",
+                "file": "content/posts/note-taking_obsidian.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/wifi_channel.md"
+                "file": "content/posts/note-taking_obsidian.md"
               }
             }
           }
@@ -148,8 +148,8 @@
   },
   "active": "a0835c44e878a2a9",
   "lastOpenFiles": [
-    "img/5channels.png.md",
     "content/posts/wifi_channel.md",
+    "img/5channels.png.md",
     "gif/chzer_download_2.gif.md",
     "img/80211spectversus.png.md",
     "img/80211acspectavg.PNG.md",
