@@ -18,8 +18,31 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "8f23714144db3c0a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/wifi_channel.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d7a28f6ed35deb2d",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "static/img/channel_architecture.png"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/note-taking_obsidian.md",
+                "file": "content/posts/wifi_channel.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/note-taking_obsidian.md",
+                "file": "content/posts/wifi_channel.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/note-taking_obsidian.md"
+                "file": "content/posts/wifi_channel.md"
               }
             }
           }
@@ -146,17 +169,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a0835c44e878a2a9",
+  "active": "8f23714144db3c0a",
   "lastOpenFiles": [
+    "static/img/channel_architecture.png",
+    "static/img/channel_bond.png",
     "content/posts/wifi_channel.md",
+    "content/posts/note-taking_obsidian.md",
     "img/5channels.png.md",
     "gif/chzer_download_2.gif.md",
     "img/80211spectversus.png.md",
     "img/80211acspectavg.PNG.md",
     "static/img/spectral_dsss.png",
-    "static/img/spectral_ofdm.png",
-    "static/img/hyperlocation_ring_antennas.jpg",
-    "static/img/hyperlocation_ring.jpg",
-    "static/img/hyperlocation.png"
+    "static/img/spectral_ofdm.png"
   ]
 }

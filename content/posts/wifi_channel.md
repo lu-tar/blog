@@ -134,14 +134,49 @@ The capture of a YouTube data flow
 
 The same question can be formulate as: *during the troubleshooting phase or the design phase of a wireless network, do we need to take into consideration the channel overlap (both co-channel interference and adjacent channel interference)?* If high-demand application are in use, the answer is 90% of the time **yes** because, the wireless protocol being "polite" and "listen before you talk" type of protocol, as soon there is channel overlap, data corruption and collisions start to occur, clients downgrade their data rates which leads to a drop of performance and packet loss.
 
+>Moving more data with every transmission is not better if I have to wait 3 times as long to send a single packet - the result could be worse than sending what I have more frequently, in smaller bits. Not all applications actually benefit from bonded channels; Voice for instance relies on small packets that are time sensitive (jitter). Video however benefits greatly - but still has a sensitivity to Jitter in some cases (real time video)
+>==ADD FOOTNOTE== [5500 Series Wireless Controllers Radio Resource Management White Paper](https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-3/b_RRM_White_Paper/dca.html#id_15210)
+
 And the remaining 10%? The impact of channel overlap is not a 0 or 1 thing because co-channel interference is strictly inevitable and problems can be highly correlated with the application resilience or the type of client, more precisely, its roaming algorithm or Keith Parsons's [green diamond](https://wlanprofessionals.com/greendiamond/); for example we can have different performance with the same application on a client which roams using RSSI only versus more advanced roaming algorithms that include SNR in the . Therefore an application can work fine also with overlapping channels within certain limits.
 
-Now, knowing that co-channel and adjacent channel interference are an important variable, we can going back to the title paragraph and reflect on how wide channels can be disruptive in a wireless network starting from this image
+Now, knowing that co-channel and adjacent channel interference are an important variable, we can going back to the title paragraph and reflect on how wide channels can be disruptive in a wireless network starting from these images
 ![](/img/5channels.png)
+![](/img/channel_bond.png)
+![](/img/channel_architecture.png)
 So if we double the channel bandwidth, we double the data throughput but we reduce drastically the number of channels available risking a "friendly fire" interference which is proportionally dangerous to the number of the access point in the same area.
 
 ### Channel assignment algorithms: Cisco DCA
+In this 3-4 years I worked both with Cisco AireOS and IOS-XE controllers, so I choose to study and review Cisco's proprietary DCA algorithm which is only a piece of a bigger cake called RRM or Radio Resource Management that includes:
+-   Radio resource monitoring
+-   Power control transmission
+-   **Dynamic channel assignment**
+-   Coverage hole detection and correction
+-   RF grouping
 
+All the information under this paragraph are from the [Cisco 9800 configuration guide, release 17.6](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/17-6/config-guide/b_wl_17_6_cg/m_rrm_c9800.html) and [2021 Radio Resource Management white paper](https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-3/b_RRM_White_Paper/dca.html).
+The main goal of the DCA algorithms is to automate the bandwidth and channel assignment using real-time RF characteristics:
+1. Access point received energy
+2. Noise
+3. 802.11 interference
+4. Load and utilization
+
+Access point received energy: The received signal strength measured between each access point and its nearby neighboring access points. Channels are optimized for the highest network capacity.
+    
+-   Noise: Noise can limit signal quality at the client and access point. An increase in noise reduces the effective cell size and degrades user experience. By optimizing channels to avoid noise sources, the device can optimize coverage while maintaining system capacity. If a channel is unusable due to excessive noise, that channel can be avoided.
+    
+-   802.11 interference: Interference is any 802.11 traffic that is not a part of your wireless LAN, including rogue access points and neighboring wireless networks. Lightweight access points constantly scan all the channels looking for sources of interference. If the amount of 802.11 interference exceeds a predefined configurable threshold (the default is 10 percent), the access point sends an alert to the device. Using the RRM algorithms, the device may then dynamically rearrange channel assignments to increase system performance in the presence of the interference. Such an adjustment could result in adjacent lightweight access points being on the same channel, but this setup is preferable to having the access points remain on a channel that is unusable due to an interfering foreign access point.
+    
+    In addition, if other wireless networks are present, the device shifts the usage of channels to complement the other networks. For example, if one network is on channel 6, an adjacent wireless LAN is assigned to channel 1 or 11. This arrangement increases the capacity of the network by limiting the sharing of frequencies. If a channel has virtually no capacity remaining, the device may choose to avoid this channel. In huge deployments in which all nonoverlapping channels are occupied, the device does its best, but you must consider RF density when setting expectations.
+    
+-   Load and utilization: When utilization monitoring is enabled, capacity calculations can consider that some access points are deployed in ways that carry more traffic than other access points, for example, a lobby versus an engineering area. The device can then assign channels to improve the access point that has performed the worst. The load is taken into account when changing the channel structure to minimize the impact on the clients that are currently in the wireless LAN. This metric keeps track of every access point’s transmitted and received packet counts to determine how busy the access points are. New clients avoid an overloaded access point and associate to a new access point. This _Load and utilization_ parameter is disabled by default.
+
+The RRM startup mode is invoked in the following conditions:
+
+-   In a single-device environment, the RRM startup mode is invoked after the device is upgraded and rebooted.
+-   In a multiple-device environment, the RRM startup mode is invoked after an RF Group leader is elected.
+-   You can trigger the RRM startup mode from the CLI.
+
+DCA algorithm interval is set to 1 hour, but DCA algorithm always runs in default interval of 10 min, channel allocation occurs at 10-min intervals for the first 10 cycles, and channel changes occur as per the DCA algorithm every 10 min. After that the DCA algorithm goes back to the configured time interval. This is common for both DCA interval and anchor time because it follows the steady state.
 
 ## References
 - 802.11 Wireless Networks by Matthew Gast (Amazon [link](https://www.amazon.it/802-11-Wireless-Networks-Definitive-Guide/dp/0596100523/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1PGLL3OA6W6QZ&keywords=Wireless+Networks+by+Matthew+Gast&qid=1673100670&sprefix=wireless+networks+by+matthew+gast%2Caps%2C151&sr=8-1))
