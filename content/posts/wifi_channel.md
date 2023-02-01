@@ -190,8 +190,6 @@ Once the calculations are complete the result is often several possible channel 
 
 Think of NCCF as an overall "goodness" rating of the change for the group.
 
-*Una volta completati i calcoli, il risultato è spesso una serie di possibili piani di canale che migliorano il CPCI. Ciascun piano di canale che produce un miglioramento viene sottoposto a un'altra funzione di regolazione nota come NCCF (normalized cumulative cost function). Questa funzione non basata su RSSI valuta i piani di canale risultanti per la bontà complessiva del gruppo CPCI, in altre parole il CPCI deve vedere un miglioramento della CM, ma solo se i suoi vicini, come gruppo, migliorano o rimangono invariati affinché il piano di canale sia raccomandato.
-Una volta completato il calcolo, il CPCI e i suoi vicini di prima istanza vengono rimossi dall'elenco dei CPCI e l'iterazione successiva inizia con una selezione casuale tra gli AP rimasti nell'elenco. Il processo DCA alternerà selezioni peggiori e casuali finché l'intero elenco di CM non sarà vuoto. In questo modo, tutti gli AP vengono valutati nel contesto di ogni altro AP che può ascoltarli. Il DCA si conclude quando l'elenco dei CM è vuoto, l'NCCF è completato e i cambi di canale vengono elaborati.*
 
 ## References
 - 802.11 Wireless Networks by Matthew Gast (Amazon [link](https://www.amazon.it/802-11-Wireless-Networks-Definitive-Guide/dp/0596100523/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1PGLL3OA6W6QZ&keywords=Wireless+Networks+by+Matthew+Gast&qid=1673100670&sprefix=wireless+networks+by+matthew+gast%2Caps%2C151&sr=8-1))
