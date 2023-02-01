@@ -154,19 +154,20 @@ In this 3-4 years I worked both with Cisco AireOS and IOS-XE controllers, so I c
 -   RF grouping
 
 All the information under this paragraph are from the [Cisco 9800 configuration guide, release 17.6](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/17-6/config-guide/b_wl_17_6_cg/m_rrm_c9800.html) and [2021 Radio Resource Management white paper](https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-3/b_RRM_White_Paper/dca.html).
-The main goal of the DCA algorithms is to automate the bandwidth and channel assignment using real-time RF characteristics:
-1. Access point received energy
-2. Noise
-3. 802.11 interference
-4. Load and utilization
+The main goal of the DCA algorithms is to automate the bandwidth and channel assignment making (hopefully) accurate RF predictions using real-time characteristics like:
+1. **RSSI between neighboring access points**, which is a tricky variable in an environment with very high shelves because the signal propagation is irregular top to bottom giving the false impression of two aps hearing each other very well when on the floor the coverage is different.
+2. **Noise**. We already covered this variable in the article and its effects on the performance.
+3. **802.11 interference**. Same as the noise.
+4. **Load and utilization**, this setting is disabled by default but why?
 
-Access point received energy: The received signal strength measured between each access point and its nearby neighboring access points. Channels are optimized for the highest network capacity.
-    
--   Noise: Noise can limit signal quality at the client and access point. An increase in noise reduces the effective cell size and degrades user experience. By optimizing channels to avoid noise sources, the device can optimize coverage while maintaining system capacity. If a channel is unusable due to excessive noise, that channel can be avoided.
-    
--   802.11 interference: Interference is any 802.11 traffic that is not a part of your wireless LAN, including rogue access points and neighboring wireless networks. Lightweight access points constantly scan all the channels looking for sources of interference. If the amount of 802.11 interference exceeds a predefined configurable threshold (the default is 10 percent), the access point sends an alert to the device. Using the RRM algorithms, the device may then dynamically rearrange channel assignments to increase system performance in the presence of the interference. Such an adjustment could result in adjacent lightweight access points being on the same channel, but this setup is preferable to having the access points remain on a channel that is unusable due to an interfering foreign access point.
-    
-    In addition, if other wireless networks are present, the device shifts the usage of channels to complement the other networks. For example, if one network is on channel 6, an adjacent wireless LAN is assigned to channel 1 or 11. This arrangement increases the capacity of the network by limiting the sharing of frequencies. If a channel has virtually no capacity remaining, the device may choose to avoid this channel. In huge deployments in which all nonoverlapping channels are occupied, the device does its best, but you must consider RF density when setting expectations.
+DCA makes decision merging all these values to a metric called CM (cost metric) expressed in dB like, as sad in the white paper, a *weighted SNIR*. After doing some research I learn that SNIR or *signal-to-noise-plus-interference ratio* is a more complex value than SNR that includes in the equation both noise and **the sum of all interfering signals**. To clarify even more i leave here the bulky Wikipedia definition:
+
+>In information theory and telecommunication engineering, the signal-to-interference-plus-noise ratio (SINR) (also known as the signal-to-noise-plus-interference ratio (SNIR)) is a quantity used to give theoretical upper bounds on channel capacity (or the rate of information transfer) in wireless communication systems such as networks. Analogous to the signal-to-noise ratio (SNR) used often in wired communications systems, the SINR is defined as the power of a certain signal of interest divided by the sum of the interference power (from all the other interfering signals) and the power of some background noise. If the power of noise term is zero, then the SINR reduces to the signal-to-interference ratio (SIR). Conversely, zero interference reduces the SINR to the SNR, which is used less often when developing mathematical models of wireless networks such as cellular networks.
+
+After this initial definition the Wikipedia article continue as follow
+>The complexity and randomness of certain types of wireless networks and signal propagation has motivated the use of [stochastic geometry models](https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks "Stochastic geometry models of wireless networks") in order to model the SINR, particularly for cellular or mobile phone networks.
+
+Which is in a way fascinating and maybe I will cover it in another article. But let's go back to the Cisco DCA and how it works.
     
 -   Load and utilization: When utilization monitoring is enabled, capacity calculations can consider that some access points are deployed in ways that carry more traffic than other access points, for example, a lobby versus an engineering area. The device can then assign channels to improve the access point that has performed the worst. The load is taken into account when changing the channel structure to minimize the impact on the clients that are currently in the wireless LAN. This metric keeps track of every access point’s transmitted and received packet counts to determine how busy the access points are. New clients avoid an overloaded access point and associate to a new access point. This _Load and utilization_ parameter is disabled by default.
 
