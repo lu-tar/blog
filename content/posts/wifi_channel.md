@@ -20,7 +20,7 @@ This article is a mix of what I've learned in the past few years and more recent
 
 The external references I've used are in the bottom of the page. Links to the single paragraphs are in the table of contents. Finally this [article](https://howiwifi.com/2020/07/03/spectrum-analysis-phys-and-interferers/) by Amazon wireless engineer Jeremy Sharp and the agnostic book *"802.11 Wireless Networks"* by Matthew S. Gast were both a huge inspiration while writing all this crap down. Go read it both!
 
-## What is a wireless channel? 👀
+## What is a wireless channel?
 Before addressing the individual topics, this is the definition of a wireless channel based on what I've learned so far: 
 
 >a channel is a numbered, shared, layer 1 domain with a specific bandwidth (often expressed in MHz) and a center frequency.
@@ -30,7 +30,7 @@ Let's unpack the little, over condensed, definition of channel:
 - A RF channel is a **shared** medium because, unlike IEEE 802.3 Ethernet which is protected from the outside, there is no "a shielded twisted pair" over the air and interferers and ground noise are variables to be strongly taken into consideration.
 - A RF channel is a **layer 1 domain** because it sits alongside 802.3 in the bottom of the ISO-OSI pile.
 - A Wi-Fi RF channel uses **bandwidth** of 20 MHz for OFDM-based transmissions and 22 MHz for DSSS-based, but we can bond channel together and double the bandwidth up to 160 MHz. 20, 40, 80 and 160 MHz are the wireless enterprise standards but some technologies can use 1 (like Bluetooth), 5 or 10 MHz bandwidth.
-- The **center frequency** of a RF channel is the peak frequency where most of the information are transmitted and isolated from other channels. 2.4 GHz and 5 GHz are the main portion of the spectrum used by the enterprise wireless vendors.
+- The **center frequency** of a RF channel is the peak frequency where most of the information are transmitted.
 
 This definition can surely be expanded according to your background but for a networking engineer with a mixed knowledge of routing and switching and wireless is a good starting point because it encapsulates all the core variables.
 
@@ -43,16 +43,16 @@ In the next section I'm going to unpack different concepts:
 4. Co-channel interference
 5. Channel assignment algorithms: Cisco DCA
 
-### Spectral mask or "what the hell am I watching?!? 🤌"
-The first day I opened Channelyzer I thought "What the hell am I watching?!" and that's the root question of this paragraph: why sometimes we see a *hill* shape, a *squared/panettone* shape or neither of them, during a RF analysis.
+### Spectral mask or "what the hell am I watching?!?"
+The first day I opened Channelyzer I thought "What the hell am I watching?!" and that's the root question of this paragraph: why sometimes we see a *hill* shape, a *squared* or *panettone* shape or neither of them, during a RF analysis.
 
 ![](/img/80211spectversus.png)
 ![](/img/80211acspectavg.PNG)
 ![](/img/80211sensorspect.PNG)
 
-The *thing that I'm seeing on the screen* during a RF is a spectral mask which is a set of rules that confine a transmission in a dedicated slice of the spectrum preventing leakage of signal on the adjacent channels.
+The *thing that I'm seeing on the screen* during a RF analysis is the live representation of a spectral mask which is a set of rules that confine a transmission in a dedicated slice of the spectrum preventing leakage of signal on the adjacent channels.
 
-Wikipedia helps us with this definition ==ADD FOOTNOTE== [^1]:
+Wikipedia helps us with this definition [^1]:
 > The spectral mask is generally intended to reduce adjacent-channel interference by limiting excessive radiation at frequencies beyond the necessary bandwidth. Attenuation of these spurious emissions is usually done with a band-pass filter, tuned to allow through the correct center frequency of the carrier wave, as well as all necessary sidebands.
 
 Bits are carried over the air with radio signals using digital encoding schemes which are DSSS and OFDM. Both have different spectral masks:
@@ -71,7 +71,7 @@ Everything that is not following this standards is in many cases a interference 
 
 ==ADD FOOTNOTE==
 
-### The Good, the Bad and the Ugly utilization of a channel 📉
+### The Good, the Bad and the Ugly utilization of a channel
 Channel utilization is a layer one measurement of the percentage of time a 802.11 channel is used above a amplitude threshold, usually of -95 dBm, within a time-span (which is mostly 30 seconds in all the gifs in this article).
 
 Some tech articles write that the definition of airtime and channel utilization are interchangeable **but** Joel Crane on 2018 Wi-Fi Trek conference ==ADD FOOTNOTE== splits those two definitions:
@@ -94,8 +94,8 @@ So when high utilization is a bad sign of **link** **congestion** and when is go
 Wrapping up, what can cause bad utilization of a channel?
 - A **very high number of clients**, regardless of the protocol used, will always downgrade their datarates with the increasing number of stations under an access point. This effect is 10x more impacful with older protocols in the 2.4 GHz spectrum.
 - Low SNR caused by
-	- Interferences both over and above the CCA ED threshold (Clear Channel Assessment, Energy Detection). The first will generate a rising number collisions, the second will in fact raise the noise floor. ==ADD FOOTNOTE==
-		- Wi-Fi *"Friendly fire" interferences* caused by a overuse of high transmit power or by a bad channel plan or by a bad positioning of access point.
+	- Interferences both over and above the CCA threshold (Clear Channel Assessment for energy detection, signal detection and network allocation vector). The first will generate a rising number collisions, the second will in fact raise the noise floor. ==ADD FOOTNOTE==
+		- Wi-Fi *"friendly fire" interferences* caused by a overuse of high transmit power, bad channel plan or bad positioning of access point.
 		- Wi-Fi *rogue interferences* like access point in near buildings of your campus.
 		- *non-Wi-Fi* interferences trasmitting in the same spectrum of Wi-Fi.
 
@@ -113,7 +113,7 @@ In the first capture of the file transfer test we can see:
 - ignore my mouse hovering on things :alien:
 ![File transfer capture on Channelyzer software](/gif/chzer_download.gif)
 
-I tested the same file transfer on The Ugly 💀 super chaotic 2.4 GHz spectrum in my home (802.11n, channel 13):
+I tested the same file transfer on The Ugly :skull: super chaotic 2.4 GHz spectrum in my home (802.11n, channel 13):
 ![File transfer capture using 802.11g](/gif/chzer_download_2.gif)
 
 We can see 
@@ -130,11 +130,53 @@ The capture of a streaming service data flow
 The capture of a YouTube data flow
 ![](/gif/chzer_video.gif)
 
-### Why I need to be careful with 40 MHz, 80 or 160 MHz 🔪
-Take 
-Article by Nick Shoemaker from Aruba ==ADD FOOTNOTE== [Mama Says Channel Bonding is the Devil by Nick Shoemaker](https://blogs.arubanetworks.com/solutions/mama-says-channel-bonding-is-the-devil/)
+### Why I need to be careful with 40 MHz, 80 or 160 MHz
 
-https://www.youtube.com/watch?v=TGqtsRaoj_w
+The same question can be formulate as: *during the troubleshooting phase or the design phase of a wireless network, do we need to take into consideration the channel overlap (both co-channel interference and adjacent channel interference)?* If high-demand application are in use, the answer is 90% of the time **yes** because, the wireless protocol being "polite" and "listen before you talk" type of protocol, as soon there is channel overlap, data corruption and collisions start to occur, clients downgrade their data rates which leads to a drop of performance and packet loss.
+
+>Moving more data with every transmission is not better if I have to wait 3 times as long to send a single packet - the result could be worse than sending what I have more frequently, in smaller bits. Not all applications actually benefit from bonded channels; Voice for instance relies on small packets that are time sensitive (jitter). Video however benefits greatly - but still has a sensitivity to Jitter in some cases (real time video)
+>==ADD FOOTNOTE== [5500 Series Wireless Controllers Radio Resource Management White Paper](https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-3/b_RRM_White_Paper/dca.html#id_15210)
+
+And the remaining 10%? The impact of channel overlap is not a 0 or 1 thing because co-channel interference is strictly inevitable and problems can be highly correlated with the application resilience or the type of client, more precisely, its roaming algorithm or Keith Parsons's [green diamond](https://wlanprofessionals.com/greendiamond/); for example we can have different performance with the same application on a client which roams using RSSI only versus more advanced roaming algorithms that include SNR in the . Therefore an application can work fine also with overlapping channels within certain limits.
+
+Now, knowing that co-channel and adjacent channel interference are an important variable, we can going back to the title paragraph and reflect on how wide channels can be disruptive in a wireless network starting from these images
+![](/img/5channels.png)
+![](/img/channel_bond.png)
+![](/img/channel_architecture.png)
+So if we double the channel bandwidth, we double the data throughput but we reduce drastically the number of channels available risking a "friendly fire" interference which is proportionally dangerous to the number of the access point in the same area.
+
+### Channel assignment algorithms: Cisco DCA
+In this 3-4 years I worked both with Cisco AireOS and IOS-XE controllers, so I choose to study and review Cisco's proprietary DCA algorithm which is only a piece of a bigger cake called RRM or Radio Resource Management that includes:
+-   Radio resource monitoring
+-   Power control transmission
+-   **Dynamic channel assignment**
+-   Coverage hole detection and correction
+-   RF grouping
+
+All the information under this paragraph are from the [Cisco 9800 configuration guide, release 17.6](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/17-6/config-guide/b_wl_17_6_cg/m_rrm_c9800.html) and [2021 Radio Resource Management white paper](https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-3/b_RRM_White_Paper/dca.html).
+The main goal of the DCA algorithms is to automate the bandwidth and channel assignment using real-time RF characteristics:
+1. Access point received energy
+2. Noise
+3. 802.11 interference
+4. Load and utilization
+
+Access point received energy: The received signal strength measured between each access point and its nearby neighboring access points. Channels are optimized for the highest network capacity.
+    
+-   Noise: Noise can limit signal quality at the client and access point. An increase in noise reduces the effective cell size and degrades user experience. By optimizing channels to avoid noise sources, the device can optimize coverage while maintaining system capacity. If a channel is unusable due to excessive noise, that channel can be avoided.
+    
+-   802.11 interference: Interference is any 802.11 traffic that is not a part of your wireless LAN, including rogue access points and neighboring wireless networks. Lightweight access points constantly scan all the channels looking for sources of interference. If the amount of 802.11 interference exceeds a predefined configurable threshold (the default is 10 percent), the access point sends an alert to the device. Using the RRM algorithms, the device may then dynamically rearrange channel assignments to increase system performance in the presence of the interference. Such an adjustment could result in adjacent lightweight access points being on the same channel, but this setup is preferable to having the access points remain on a channel that is unusable due to an interfering foreign access point.
+    
+    In addition, if other wireless networks are present, the device shifts the usage of channels to complement the other networks. For example, if one network is on channel 6, an adjacent wireless LAN is assigned to channel 1 or 11. This arrangement increases the capacity of the network by limiting the sharing of frequencies. If a channel has virtually no capacity remaining, the device may choose to avoid this channel. In huge deployments in which all nonoverlapping channels are occupied, the device does its best, but you must consider RF density when setting expectations.
+    
+-   Load and utilization: When utilization monitoring is enabled, capacity calculations can consider that some access points are deployed in ways that carry more traffic than other access points, for example, a lobby versus an engineering area. The device can then assign channels to improve the access point that has performed the worst. The load is taken into account when changing the channel structure to minimize the impact on the clients that are currently in the wireless LAN. This metric keeps track of every access point’s transmitted and received packet counts to determine how busy the access points are. New clients avoid an overloaded access point and associate to a new access point. This _Load and utilization_ parameter is disabled by default.
+
+The RRM startup mode is invoked in the following conditions:
+
+-   In a single-device environment, the RRM startup mode is invoked after the device is upgraded and rebooted.
+-   In a multiple-device environment, the RRM startup mode is invoked after an RF Group leader is elected.
+-   You can trigger the RRM startup mode from the CLI.
+
+DCA algorithm interval is set to 1 hour, but DCA algorithm always runs in default interval of 10 min, channel allocation occurs at 10-min intervals for the first 10 cycles, and channel changes occur as per the DCA algorithm every 10 min. After that the DCA algorithm goes back to the configured time interval. This is common for both DCA interval and anchor time because it follows the steady state.
 
 ## References
 - 802.11 Wireless Networks by Matthew Gast (Amazon [link](https://www.amazon.it/802-11-Wireless-Networks-Definitive-Guide/dp/0596100523/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1PGLL3OA6W6QZ&keywords=Wireless+Networks+by+Matthew+Gast&qid=1673100670&sprefix=wireless+networks+by+matthew+gast%2Caps%2C151&sr=8-1))
@@ -146,6 +188,9 @@ https://www.youtube.com/watch?v=TGqtsRaoj_w
 - [How do we handle Channel Busy on RF and the factors that could contribute?](https://community.arubanetworks.com/browse/articles/blogviewer?blogkey=57313b3d-f07e-4bbb-8ada-41ee62fe68ce) from Aruba
 - [Old but gold, AireOS DCA Dynamic Channel Assignment](https://mrncciew.com/2013/03/16/configuring-dca/)
 - [Wi-Fi Airtime Utilization](https://www.csbtech.net/blog/2016/3/1/airtime-fxjhg)
+- Article by Nick Shoemaker from Aruba [Mama Says Channel Bonding is the Devil by Nick Shoemaker](https://blogs.arubanetworks.com/solutions/mama-says-channel-bonding-is-the-devil/)
+- [Ekahau - Demystifying Wi-Fi: Channel Planning Made Simple](https://youtu.be/TGqtsRaoj_w?t=1088)
+- 
 
 ## Da aggiungere
 - In relation of 802.11b [Clear channel assessment attack](https://en.wikipedia.org/wiki/Clear_channel_assessment_attack)
