@@ -4,23 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "419fca7baf000238",
+        "id": "c21d2429814bc2f6",
         "type": "tabs",
         "children": [
           {
-            "id": "a0835c44e878a2a9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/posts/note-taking_obsidian.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8f23714144db3c0a",
+            "id": "e552d353bc8dfd15",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,17 +20,16 @@
             }
           },
           {
-            "id": "d7a28f6ed35deb2d",
+            "id": "541c182f49c45fe6",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "static/img/channel_architecture.png"
+                "file": "static/img/5channels.png"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -169,21 +156,17 @@
       "command-palette:Open command palette": false
     }
   },
-<<<<<<< HEAD
   "active": "e552d353bc8dfd15",
-=======
-  "active": "8f23714144db3c0a",
->>>>>>> 98c204b37317e60e95a7aec9d7cb5bbc63072aa2
   "lastOpenFiles": [
-    "static/img/channel_architecture.png",
-    "static/img/channel_bond.png",
+    "static/img/5channels.png",
     "content/posts/wifi_channel.md",
-    "content/posts/note-taking_obsidian.md",
-    "img/5channels.png.md",
-    "gif/chzer_download_2.gif.md",
     "img/80211spectversus.png.md",
     "img/80211acspectavg.PNG.md",
     "static/img/spectral_dsss.png",
-    "static/img/spectral_ofdm.png"
+    "static/img/spectral_ofdm.png",
+    "static/img/hyperlocation_ring_antennas.jpg",
+    "static/img/hyperlocation_ring.jpg",
+    "static/img/hyperlocation.png",
+    "static/img/hugo_netlify.png"
   ]
 }

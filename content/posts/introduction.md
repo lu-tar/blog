@@ -31,4 +31,4 @@ I think that writing a blog combines these things well:
 Also I started this blog as a personal project without the presumption that it will become an authoritative source of information. Nevertheless, I will strive to make the articles less chaotic as possible.
 
 ## If you are interested in my CV
-Feel free to visits my [LinkedIn page](https://www.linkedin.com/in/luca-tarozzi-9ab371178/) and send me a message or write an email to `l.tar@protonmail.com`
+Feel free to visits my [LinkedIn page](https://www.linkedin.com/in/luca-tarozzi-9ab371178/).

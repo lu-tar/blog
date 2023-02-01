@@ -154,30 +154,44 @@ In this 3-4 years I worked both with Cisco AireOS and IOS-XE controllers, so I c
 -   RF grouping
 
 All the information under this paragraph are from the [Cisco 9800 configuration guide, release 17.6](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/17-6/config-guide/b_wl_17_6_cg/m_rrm_c9800.html) and [2021 Radio Resource Management white paper](https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-3/b_RRM_White_Paper/dca.html).
-The main goal of the DCA algorithms is to automate the bandwidth and channel assignment making (hopefully) accurate RF predictions using real-time characteristics like:
+The main goal of the DCA algorithms is to automate the bandwidth and channel assignment making (hopefully) quick and accurate RF predictions using real-time characteristics like:
 1. **RSSI between neighboring access points**, which is a tricky variable in an environment with very high shelves because the signal propagation is irregular top to bottom giving the false impression of two aps hearing each other very well when on the floor the coverage is different.
-2. **Noise**. We already covered this variable in the article and its effects on the performance.
+2. **Noise**. We already covered this variable and its effects on wireless performance with topics like CCI.
 3. **802.11 interference**. Same as the noise.
 4. **Load and utilization**, this setting is disabled by default but why? My opinion is that being load a "grey" variable must be considered in the DCA calculations with caution because steering a client towards less occupied access points is not always 
 
-DCA makes decision merging all these values to a metric called CM (cost metric) expressed in dB like, as sad in the white paper, a *weighted SNIR*. After doing some research I learn that SNIR or *signal-to-noise-plus-interference ratio* is a more complex value than SNR that includes in the equation both noise and **the sum of all interfering signals**. To clarify even more i leave here the bulky Wikipedia definition:
+DCA makes decision merging all these values to a metric called CM (cost metric) expressed in dB like, as sad in the white paper, a *weighted SNIR* where -80 dB is better than -60 dB like a noise floor value. After doing some research I learn that SNIR or *signal-to-noise-plus-interference ratio* is a more complex value than SNR that includes in the equation both noise and **the sum of all interfering signals**. To clarify even more i leave here the bulky Wikipedia definition:
 
 >In information theory and telecommunication engineering, the signal-to-interference-plus-noise ratio (SINR) (also known as the signal-to-noise-plus-interference ratio (SNIR)) is a quantity used to give theoretical upper bounds on channel capacity (or the rate of information transfer) in wireless communication systems such as networks. Analogous to the signal-to-noise ratio (SNR) used often in wired communications systems, the SINR is defined as the power of a certain signal of interest divided by the sum of the interference power (from all the other interfering signals) and the power of some background noise. If the power of noise term is zero, then the SINR reduces to the signal-to-interference ratio (SIR). Conversely, zero interference reduces the SINR to the SNR, which is used less often when developing mathematical models of wireless networks such as cellular networks.
 
-After this initial definition the Wikipedia article continue as follow
+After this initial definition the Wikipedia article continues as follow
 >The complexity and randomness of certain types of wireless networks and signal propagation has motivated the use of [stochastic geometry models](https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks "Stochastic geometry models of wireless networks") in order to model the SINR, particularly for cellular or mobile phone networks.
 
 Which is in a way fascinating and maybe I will cover it in another article. But let's go back to the Cisco DCA and how it works.
-    
-Load and utilization: When utilization monitoring is enabled, capacity calculations can consider that some access points are deployed in ways that carry more traffic than other access points, for example, a lobby versus an engineering area. The device can then assign channels to improve the access point that has performed the worst. The load is taken into account when changing the channel structure to minimize the impact on the clients that are currently in the wireless LAN. This metric keeps track of every access point’s transmitted and received packet counts to determine how busy the access points are. New clients avoid an overloaded access point and associate to a new access point. This _Load and utilization_ parameter is disabled by default.
 
-The RRM startup mode is invoked in the following conditions:
+The variables in play are clear but how the wireless lan controller makes DCA decision? The WLC collects in a list (CPCI or Channel Plan Change Initiator list) the CM statistics of all access point in a RF group, starting from the one with worst perfomance, linking together values from 1st and 2nd hop neighbors. CM values from 2nd hop neighbor are useful because we want to change dynamically a channel only if there are good conditions in the neighboring channels avoiding a worthless chain reaction of channel changes across the entire RF group.
 
--   In a single-device environment, the RRM startup mode is invoked after the device is upgraded and rebooted.
--   In a multiple-device environment, the RRM startup mode is invoked after an RF Group leader is elected.
--   You can trigger the RRM startup mode from the CLI.
+The channel switch can be tuned manually with DCA sensitivity thresholds:
+| Band GHz      | High Δ(CM) | Medium Δ(CM) | Low Δ(CM) |
+| ----------- | ----------- | ----------- | ----------- |
+| 2.4      | 5 dB       |  10 dB       | 20 dB       |
+| 5   |  5 dB       | 15 dB       | 20 dB       |
 
-DCA algorithm interval is set to 1 hour, but DCA algorithm always runs in default interval of 10 min, channel allocation occurs at 10-min intervals for the first 10 cycles, and channel changes occur as per the DCA algorithm every 10 min. After that the DCA algorithm goes back to the configured time interval. This is common for both DCA interval and anchor time because it follows the steady state.
+For example:
+1. the DCA start on an access point in a 5 GHz with the worst Cost Metric (CM) of -65 dB
+2. the DCA sensitivity threshold is set to **Low**
+3. for simplicity it discover only two channels with better CM
+	- *ch 40:* -67 dB -> ΔCM = (-67 - (-65)) dB = 2 dB
+	- *ch 44:* -74 dB -> ΔCM = (-74 - (-65)) dB = 9 dB
+- The ΔCM of *ch 44* being lower of the low threshold (20 dB for 5 GHz) it will **not** recommended the channel change to 44.
+- If we had used the high threshold, we would have had a possible candidate for a channel change.
+- Then, 
+Once the calculations are complete the result is often several possible channel plans which will improve the CPCI. Each channel plan, which yields improvement, is subjected to another gating feature known as the NCCF (normalized cumulative cost function). This non-RSSI based function evaluates the resulting channel plans for overall CPCI group goodness, in other words the CPCI must see an improved CM, but only if it's neighbors, as a group, either improve or stay the same for the channel plan to be recommended.
+
+Think of NCCF as an overall "goodness" rating of the change for the group.
+
+*Una volta completati i calcoli, il risultato è spesso una serie di possibili piani di canale che migliorano il CPCI. Ciascun piano di canale che produce un miglioramento viene sottoposto a un'altra funzione di regolazione nota come NCCF (normalized cumulative cost function). Questa funzione non basata su RSSI valuta i piani di canale risultanti per la bontà complessiva del gruppo CPCI, in altre parole il CPCI deve vedere un miglioramento della CM, ma solo se i suoi vicini, come gruppo, migliorano o rimangono invariati affinché il piano di canale sia raccomandato.
+Una volta completato il calcolo, il CPCI e i suoi vicini di prima istanza vengono rimossi dall'elenco dei CPCI e l'iterazione successiva inizia con una selezione casuale tra gli AP rimasti nell'elenco. Il processo DCA alternerà selezioni peggiori e casuali finché l'intero elenco di CM non sarà vuoto. In questo modo, tutti gli AP vengono valutati nel contesto di ogni altro AP che può ascoltarli. Il DCA si conclude quando l'elenco dei CM è vuoto, l'NCCF è completato e i cambi di canale vengono elaborati.*
 
 ## References
 - 802.11 Wireless Networks by Matthew Gast (Amazon [link](https://www.amazon.it/802-11-Wireless-Networks-Definitive-Guide/dp/0596100523/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1PGLL3OA6W6QZ&keywords=Wireless+Networks+by+Matthew+Gast&qid=1673100670&sprefix=wireless+networks+by+matthew+gast%2Caps%2C151&sr=8-1))
