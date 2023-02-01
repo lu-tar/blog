@@ -3,5 +3,10 @@
   "attachmentFolderPath": "static",
   "newLinkFormat": "shortest",
   "useMarkdownLinks": false,
-  "spellcheck": true
+  "spellcheck": true,
+  "spellcheckLanguages": [
+    "it",
+    "en-US"
+  ],
+  "readableLineLength": true
 }

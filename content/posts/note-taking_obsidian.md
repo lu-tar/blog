@@ -46,8 +46,6 @@ These are my mandatory steps to do before start using the application:
 			- Set the `Toggle code` shortcut to `CTRL + SHIFT + <`
 			- Set the Template shortcut `CTRL + SHIFT + I`
 
-That's a lot :skull: but we are almost done. Take this cute dog as a reward ![a cute dog](/gif/fluffy-dog.gif)
-
 ## Folders, tags and links
 ### Folders
 Once we finished the first setup we can start working with Obsidian keeping in mind that is a tool based on hypertext or "now I can link together two or more files", so for this reason I like to have a few folders and create a logical structure using links as much as possible.
