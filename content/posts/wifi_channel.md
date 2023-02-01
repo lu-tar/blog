@@ -158,7 +158,7 @@ The main goal of the DCA algorithms is to automate the bandwidth and channel ass
 1. **RSSI between neighboring access points**, which is a tricky variable in an environment with very high shelves because the signal propagation is irregular top to bottom giving the false impression of two aps hearing each other very well when on the floor the coverage is different.
 2. **Noise**. We already covered this variable in the article and its effects on the performance.
 3. **802.11 interference**. Same as the noise.
-4. **Load and utilization**, this setting is disabled by default but why?
+4. **Load and utilization**, this setting is disabled by default but why? My opinion is that being load a "grey" variable must be considered in the DCA calculations with caution because steering a client towards less occupied access points is not always 
 
 DCA makes decision merging all these values to a metric called CM (cost metric) expressed in dB like, as sad in the white paper, a *weighted SNIR*. After doing some research I learn that SNIR or *signal-to-noise-plus-interference ratio* is a more complex value than SNR that includes in the equation both noise and **the sum of all interfering signals**. To clarify even more i leave here the bulky Wikipedia definition:
 
@@ -169,7 +169,7 @@ After this initial definition the Wikipedia article continue as follow
 
 Which is in a way fascinating and maybe I will cover it in another article. But let's go back to the Cisco DCA and how it works.
     
--   Load and utilization: When utilization monitoring is enabled, capacity calculations can consider that some access points are deployed in ways that carry more traffic than other access points, for example, a lobby versus an engineering area. The device can then assign channels to improve the access point that has performed the worst. The load is taken into account when changing the channel structure to minimize the impact on the clients that are currently in the wireless LAN. This metric keeps track of every access point’s transmitted and received packet counts to determine how busy the access points are. New clients avoid an overloaded access point and associate to a new access point. This _Load and utilization_ parameter is disabled by default.
+Load and utilization: When utilization monitoring is enabled, capacity calculations can consider that some access points are deployed in ways that carry more traffic than other access points, for example, a lobby versus an engineering area. The device can then assign channels to improve the access point that has performed the worst. The load is taken into account when changing the channel structure to minimize the impact on the clients that are currently in the wireless LAN. This metric keeps track of every access point’s transmitted and received packet counts to determine how busy the access points are. New clients avoid an overloaded access point and associate to a new access point. This _Load and utilization_ parameter is disabled by default.
 
 The RRM startup mode is invoked in the following conditions:
 
