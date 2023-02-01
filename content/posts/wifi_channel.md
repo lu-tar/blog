@@ -164,7 +164,7 @@ DCA makes decision merging all these values to a metric called CM (cost metric) 
 
 >In information theory and telecommunication engineering, the signal-to-interference-plus-noise ratio (SINR) (also known as the signal-to-noise-plus-interference ratio (SNIR)) is a quantity used to give theoretical upper bounds on channel capacity (or the rate of information transfer) in wireless communication systems such as networks. Analogous to the signal-to-noise ratio (SNR) used often in wired communications systems, the SINR is defined as the power of a certain signal of interest divided by the sum of the interference power (from all the other interfering signals) and the power of some background noise. If the power of noise term is zero, then the SINR reduces to the signal-to-interference ratio (SIR). Conversely, zero interference reduces the SINR to the SNR, which is used less often when developing mathematical models of wireless networks such as cellular networks.
 
-After this initial definition the Wikipedia article continues as follow
+After this initial definition, the Wikipedia article continues as follow
 >The complexity and randomness of certain types of wireless networks and signal propagation has motivated the use of [stochastic geometry models](https://en.wikipedia.org/wiki/Stochastic_geometry_models_of_wireless_networks "Stochastic geometry models of wireless networks") in order to model the SINR, particularly for cellular or mobile phone networks.
 
 Which is in a way fascinating and maybe I will cover it in another article. But let's go back to the Cisco DCA and how it works.
