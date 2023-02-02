@@ -26,22 +26,21 @@ Before addressing the individual topics, here is the definition of a wireless ch
 >a channel is a numbered, shared, layer 1 domain with a specific bandwidth (often expressed in MHz) and a center frequency.
 
 Let's unpack the little, over condensed, definition of channel:  
-A radio frequency channel is **numbered** because channel "1" is easier to remember than "22 MHz channel with center frequency of 2412 MHz between 2401 and 2423 MHz."  
+- A radio frequency channel is **numbered** because channel "1" is easier to remember than "22 MHz channel with center frequency of 2412 MHz between 2401 and 2423 MHz".  
 - An RF channel is a "shared" medium because, unlike IEEE 802.3 Ethernet, which is shielded from the outside, there is no "shielded twisted pair" over the air, and interferers and ground noise are important variables to consider.  
 - A RF channel is a **layer 1 domain** because it sits alongside 802.3 in the bottom of the ISO-OSI pile.  
 - A Wi-Fi RF channel uses **bandwidth** of 20 MHz for OFDM-based transmissions and 22 MHz for DSSS-based, but we can bond channel together and double the bandwidth up to 160 MHz. 20, 40, 80 and 160 MHz are the wireless enterprise standards but some technologies can use 1 (like Bluetooth), 5 or 10 MHz bandwidth.  
 - The **center frequency** of a RF channel is the peak frequency where most of the information are transmitted.
 
-This definition can surely be expanded according to your background but for a networking engineer with a mixed knowledge of routing, switching, and wireless, this is a good starting point because it encapsulates all the core variables.
+This definition can surely be expanded according to your background but for a networking engineer with a mixed knowledge of routing, switching and wireless, this is a good starting point because it encapsulates all the core variables.
 
 ---
 
 In the next section I'm going to unpack different concepts:
 1. The shape of a wireless channel
-2. Channel bonding
-3. Good and bad channel utilization
-4. Co-channel interference
-5. Channel assignment algorithms: Cisco DCA
+2. Good and bad channel utilization
+3. Channel bonding
+4. Channel assignment algorithms: Cisco DCA
 
 ### Spectral mask or "what the hell am I watching?!?"
 The first day I opened Channelyzer I thought "What the hell am I watching?!" And that is the root question of this paragraph: why do we occasionally see a *hill* shape, a *squared* shape, a *panettone* shape, or neither during an RF analysis?
@@ -67,7 +66,7 @@ OFDM [^2]
 
 ![OFDM channel](/img/spectral_ofdm.png)
 
-Everything that does not adhere to these standards causes interference in the wifi spectrum in many cases.The fourth screenshot is the perfect example which is a volumetric sensor in my house that fortunately works away from traditional channels.
+Everything that does not adhere to these standards causes interference in the wifi spectrum in many cases.The fourth green screenshot is the perfect example which is a volumetric sensor in my house that fortunately works away from traditional channels.
 
 ### The Good, the Bad and the Ugly utilization of a channel
 Channel utilization is a layer one measurement of the percentage of time a 802.11 channel is used above a amplitude threshold, usually of -95 dBm, within a time-span (which is mostly 30 seconds in all the gifs in this article).
@@ -93,7 +92,7 @@ Wrapping up, what can cause bad utilization of a channel?
 - A **very high number of clients**, regardless of the protocol used, will always downgrade their data rates with the increasing number of stations under an access point. This effect is 10x more impacful with older protocols in the 2.4 GHz spectrum.  
 - Low SNR caused by  
 	- Interferences both over and above the CCA threshold (Clear Channel Assessment for energy detection, signal detection and network allocation vector). The first will generate a rising number collisions, the second will in fact raise the noise floor. [^5]  
-	- *"Friendly Fire" interferences* caused by excessive use of high transmit power, a poor channel plan, or poor access point positioning.
+	- *"Friendly fire" interferences* caused by excessive use of high transmit power, a poor channel plan or a not optimal location of access point.
 	- Wi-Fi *rogue interferences* like access point in near buildings of your campus.
 	- Interferences from non-Wi-Fi devices transmitting in the same spectrum as Wi-Fi.
 
@@ -130,12 +129,12 @@ The capture of a YouTube data flow
 
 ### Why I need to be careful with 40 MHz, 80 or 160 MHz
 
-The same question can be formulated as: *during the troubleshooting phase or the design phase of a wireless network, do we need to take into consideration the channel overlap (both co-channel interference and adjacent channel interference)?* If high-demand applications are in use, the answer is yes 90% of the time because the wireless protocol is a "polite" and "listen before you talk" protocol. As soon as there is channel overlap, data corruption and collisions start to occur, clients downgrade their data rates which leads to a drop in performance and packet loss.
+The same question can be formulated as: *during the troubleshooting phase or the design phase of a wireless network, do we need to take into consideration the channel overlap (both co-channel interference and adjacent channel interference)?* If high-demand applications are in use, the answer is yes 90% of the time because the wireless protocol is a "polite" and "listen before you talk" protocol. As soon as there is channel overlap (>30-40% of cell overlap), data corruption and collisions start to occur, clients downgrade their data rates which leads to a drop in performance and packet loss.
 
 >Moving more data with every transmission is not better if I have to wait 3 times as long to send a single packet - the result could be worse than sending what I have more frequently, in smaller bits. Not all applications actually benefit from bonded channels; Voice for instance relies on small packets that are time sensitive (jitter). Video however benefits greatly - but still has a sensitivity to Jitter in some cases (real time video).
 [^6]
 
-And the remaining 10%? The impact of channel overlap is not a 0 or 1 thing because co-channel interference is strictly inevitable and problems can be highly correlated with the application resilience or the type of client, more precisely, its roaming algorithm or Keith Parsons's [green diamond](https://wlanprofessionals.com/greendiamond/); for example we can have different performance with the same application on a client which roams using RSSI only versus more advanced roaming algorithms that include SNR in the . Therefore, an application can also work fine with overlapping channels within certain limits.
+And the remaining 10%? The impact of channel overlap is not a 0 or 1 thing because co-channel interference is strictly inevitable and problems can be highly correlated with the application resilience or the type of client, more precisely, its roaming algorithm or Keith Parsons's [green diamond](https://wlanprofessionals.com/greendiamond/); for example we can have different performance with the same application on a client which roams using RSSI only versus more advanced roaming algorithms that include SNR in the roam evaluation. Therefore, an application can also work fine with overlapping channels. Channel overlap is acceptable, and it even helps clients do better roaming from one Wi-Fi cell to another, but only within a certain percentage that each vendor specifies in its design guide based on the applications that need to connect to Wi-Fi.
 
 Now, knowing that co-channel and adjacent channel interference are important variables, we can go back to the title paragraph and reflect on how wide channels can be disruptive in a wireless network, starting from these images:  
 ![](/img/5channels.png)  
@@ -189,11 +188,14 @@ For example (not a real scenario):
 	-  AP 3 CM: -79 dB -> ΔCM = 14 dB
 - The ΔCM of *ch 44* being lower of the low threshold (20 dB for 5 GHz) it will **not** recommended the channel change to 44. Same for the AP 2.
 - If we had used the **high** threshold (5 dB for 5 GHz), we would have had a possible candidate for a channel change.
+
+If we had used the high threshold, we would have had a possible candidate for a channel change.
+
 All the steps above are done on each access point in the RF group, making a list of all "possible improvements" or the Channel Plan Change Initiator list (CPCI). The changes are not instantly committed because we don't want the chain of channel changes to negatively impact the RF group; therefore, the NCCF function (normalized cumulative cost function) rates the change for the entire group before switching channels.
 
 > Think of NCCF as an overall "goodness" rating of the change for the group.
 
-If we had used the high threshold, we would have had a possible candidate for a channel change. Wrapping up, writing this paragraph on the DCA helped me understand the core concepts of this algorithm. **But** the documentation also covers:  
+Wrapping up, writing this paragraph on the DCA helped me understand the core concepts of this algorithm. **But** the documentation also covers:  
 - how DCA handles overlapped bonded channels
 - modes of operation (scheduled and start-up mode)
 - Dynamic Bandwidth Selection or DBS
