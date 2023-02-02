@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/wifi_channel.md",
+                "file": "content/posts/introduction.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/wifi_channel.md",
+                "file": "content/posts/introduction.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/wifi_channel.md",
+                "file": "content/posts/introduction.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/wifi_channel.md"
+                "file": "content/posts/introduction.md"
               }
             }
           }
@@ -148,15 +148,15 @@
   },
   "active": "e552d353bc8dfd15",
   "lastOpenFiles": [
-    "static/img/5channels.png",
+    "content/posts/hugo_netlify.md",
+    "content/posts/introduction.md",
     "content/posts/wifi_channel.md",
+    "static/img/5channels.png",
     "img/80211spectversus.png.md",
     "img/80211acspectavg.PNG.md",
     "static/img/spectral_dsss.png",
     "static/img/spectral_ofdm.png",
     "static/img/hyperlocation_ring_antennas.jpg",
-    "static/img/hyperlocation_ring.jpg",
-    "static/img/hyperlocation.png",
-    "static/img/hugo_netlify.png"
+    "static/img/hyperlocation_ring.jpg"
   ]
 }
