@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/introduction.md",
+                "file": "content/posts/wifi_channel.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/introduction.md",
+                "file": "content/posts/wifi_channel.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/introduction.md",
+                "file": "content/posts/wifi_channel.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/introduction.md"
+                "file": "content/posts/wifi_channel.md"
               }
             }
           }
@@ -148,10 +148,10 @@
   },
   "active": "2d8488e98b5e5e1f",
   "lastOpenFiles": [
+    "content/posts/introduction.md",
     "content/posts/wifi_channel.md",
     "content/posts/notes_arch_encore.md",
     "content/posts/notes_cap13_loc-services.md",
-    "content/posts/introduction.md",
     "content/posts/hugo_netlify.md",
     "static/img/5channels.png",
     "img/80211spectversus.png.md",
