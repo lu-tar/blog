@@ -186,7 +186,7 @@ For example (not a real scenario):
 2. the DCA sensitivity threshold is set to **Low**
 3. it discover only two aps with better CM
 	-  AP 2 CM: -67 dB -> ΔCM = 2 dB
-	-  AP 3 CM: -74 dB -> ΔCM = 14 dB
+	-  AP 3 CM: -79 dB -> ΔCM = 14 dB
 - The ΔCM of *ch 44* being lower of the low threshold (20 dB for 5 GHz) it will **not** recommended the channel change to 44. Same for the AP 2.
 - If we had used the **high** threshold (5 dB for 5 GHz), we would have had a possible candidate for a channel change.
 All the steps above are done on each access point in the RF group, making a list of all "possible improvements" or the Channel Plan Change Initiator list (CPCI). The changes are not instantly committed because we don't want the chain of channel changes to negatively impact the RF group; therefore, the NCCF function (normalized cumulative cost function) rates the change for the entire group before switching channels.
