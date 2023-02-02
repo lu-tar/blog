@@ -179,9 +179,9 @@ The channel switch can be tuned manually with DCA sensitivity thresholds:
 | 5   |  5 dB       | 15 dB       | 20 dB       |
 
 - IOS XE 17.3
->**Low**: The DCA algorithm is not particularly sensitive to environmental changes. The DCA threshold is 30 dB.
- **Medium**: (default) The DCA algorithm is moderately sensitive to environmental changes. The DCA threshold is 15 dB. 
- **High**: The DCA algorithm is highly sensitive to environmental changes. The DCA threshold is 5 dB.
+- **Low**: The DCA algorithm is not particularly sensitive to environmental changes. The DCA threshold is 30 dB.
+- **Medium**: (default) The DCA algorithm is moderately sensitive to environmental changes. The DCA threshold is 15 dB. 
+- **High**: The DCA algorithm is highly sensitive to environmental changes. The DCA threshold is 5 dB.
 ==ADD FOOTNOTE== [Configuring Advanced 802.11 Channel Assignment Parameters](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/17-3/config-guide/b_wl_17_3_cg/m_rrm_c9800.html#config-rf-group-selection-mode-gui)
 
 For example (not a real scenario):
