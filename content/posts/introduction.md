@@ -27,8 +27,6 @@ I think that writing a blog combines well these things:
 - use cases, problems and projects from my personal work experience 
 - what I'm studying at the moment - an opportunity to smooth the edges of my written English 
 - since the article will be public, I force myself to take notes and consult the documentation more precisely 
-- learn how to use the GitHub versioning of the code 
-
-Also, I started this blog as a personal project without the presumption that it will become an authoritative source of information. Nevertheless, I will strive to make the articles less chaotic as possible.
+- learn how to use the GitHub versioning of the code
 
 ## Here my [LinkedIn](https://www.linkedin.com/in/luca-tarozzi-9ab371178/) page
