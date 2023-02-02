@@ -1,0 +1,2 @@
+# [#show run](https://showrun.netlify.app/)
+Welcome to my blog! My name is Luca, I'm a network technician with a few years of experience in a helpdesk team. These articles will try to mix some personal thoughts and the theory behind the technologies I deal with every day at work. I started this blog as a personal project without the presumption that it will become an authoritative source of information. Nevertheless, I will strive to make the articles less chaotic as possible."
