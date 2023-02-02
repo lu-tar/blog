@@ -12,9 +12,7 @@ ShowToc: true
 author: ["Luca"]
 ---
 # Note-taking with Obsidian
-In this article Hugo + Netlify + GitHub I talked about how I setup this website with my few programming skills. In those lines I mentioned frequently markdown files and Obsidian so in this article I'm going to explain how I organize and take notes. But first let's address some questions
 
-### What is Obsidian? 
 [Obsidian](https://obsidian.md/) is a free, open-source note-taking app which helps you link your notes to each other using hypertext with markdown files.
 
 ### Why I need to switch from OneNote, Google Drive or Evernote to Obsidian?

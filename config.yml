@@ -38,8 +38,6 @@ params:
   socialIcons:
     - name: linkedin
       url: 'https://www.linkedin.com/in/luca-tarozzi-9ab371178/'
-    - name: github
-      url: 'https://github.com/lu-tar/'
   cover:
     linkFullImages: true
 

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/wifi_channel.md",
+                "file": "content/posts/notes_cap13_loc-services.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/wifi_channel.md",
+                "file": "content/posts/notes_cap13_loc-services.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/wifi_channel.md",
+                "file": "content/posts/notes_cap13_loc-services.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/wifi_channel.md"
+                "file": "content/posts/notes_cap13_loc-services.md"
               }
             }
           }
@@ -148,15 +148,15 @@
   },
   "active": "2d8488e98b5e5e1f",
   "lastOpenFiles": [
-    "content/posts/introduction.md",
     "content/posts/wifi_channel.md",
+    "content/posts/note-taking_obsidian.md",
+    "content/posts/introduction.md",
+    "content/posts/hugo_netlify.md",
     "content/posts/notes_arch_encore.md",
     "content/posts/notes_cap13_loc-services.md",
-    "content/posts/hugo_netlify.md",
     "static/img/5channels.png",
     "img/80211spectversus.png.md",
     "img/80211acspectavg.PNG.md",
-    "static/img/spectral_dsss.png",
-    "static/img/spectral_ofdm.png"
+    "static/img/spectral_dsss.png"
   ]
 }
