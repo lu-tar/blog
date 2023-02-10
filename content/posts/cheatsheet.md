@@ -1,7 +1,7 @@
 ---
 title: ""
 date: 2023-02-10T14:50:53+02:00
-draft: false
+draft: true
 tags: ["cmd", "command"]
 categories: ["cheat sheet"]
 cover:
