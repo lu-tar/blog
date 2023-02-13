@@ -2,7 +2,7 @@
 title: "Wi-Fi channels"
 date: 2022-12-26T16:13:53+02:00
 draft: false
-tags: ["wireless", "channel", "PHY", "channelyzer", "cisco", "aruba", "utilization", "interference", "noise", "overlap"]
+tags: ["wireless", "channel", "PHY", "chanalyzer", "cisco", "aruba", "utilization", "interference", "noise", "overlap"]
 categories: ["in-depth"]
 cover:
   image: img/channels.png
@@ -43,7 +43,7 @@ In the next section I'm going to unpack different concepts:
 4. Channel assignment algorithms: Cisco DCA
 
 ### Spectral mask or "what the hell am I watching?!?"
-The first day I opened Channelyzer I thought "What the hell am I watching?!" And that is the root question of this paragraph: why do we occasionally see a *hill* shape, a *squared* shape, a *panettone* shape, or neither during an RF analysis?
+The first day I opened Chanalyzer I thought "What the hell am I watching?!" And that is the root question of this paragraph: why do we occasionally see a *hill* shape, a *squared* shape, a *panettone* shape, or neither during an RF analysis?
 
 ![](/img/80211spectversus.png)  
 ![](/img/80211acspectavg.PNG)  
@@ -97,7 +97,7 @@ Wrapping up, what can cause bad utilization of a channel?
 	- Interferences from non-Wi-Fi devices transmitting in the same spectrum as Wi-Fi.
 
 ---
-In the previous paragraph we saw how a spectral mask changed shape according to the encoding protocol. So to better visualize and understand both channel utilization and the spectral mask, I made 4 RF captures using [Metageek's Channelyzer](https://www.metageek.com/) of:  
+In the previous paragraph we saw how a spectral mask changed shape according to the encoding protocol. So to better visualize and understand both channel utilization and the spectral mask, I made 4 RF captures using [Metageek's Chanalyzer](https://www.metageek.com/) of:  
 1. A file transfer using 802.11ac and channel 116  
 2. A file transfer using 802.11n and channel 13  
 3. A streaming service data flow using 802.11ac and channel 116  
@@ -108,7 +108,7 @@ In the first capture of the file transfer test we can see: 
 - the light blue utilization graph rising from 20 to 100% on the bottom of the screen  
 - the color of the waterfall graph changing from blue (not busy) to green, then red (fully occupied).  
 - ignore my mouse hovering on things :alien:
-![File transfer capture on Channelyzer software](/gif/chzer_download.gif)
+![File transfer capture on Chanalyzer software](/gif/chzer_download.gif)
 
 I tested the same file transfer on The Ugly :skull: super chaotic 2.4 GHz spectrum in my home (802.11n, channel 13):
 ![File transfer capture using 802.11g](/gif/chzer_download_2.gif)
