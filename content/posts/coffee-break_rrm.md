@@ -1,7 +1,7 @@
 ---
 title: "A coffee-break article about RRM"
 date: 2023-03-18T18:10:11+02:00
-draft: true
+draft: false
 tags: ["wireless", "rrm", "dca", "power", "channel", "design", "tpc"]
 categories: ["coffee-break"]
 cover:

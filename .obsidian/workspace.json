@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/coffee-break_rrm.md",
+                "file": "content/posts/coffee-break_benchmark.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/coffee-break_rrm.md",
+                "file": "content/posts/coffee-break_benchmark.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/coffee-break_rrm.md",
+                "file": "content/posts/coffee-break_benchmark.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/coffee-break_rrm.md"
+                "file": "content/posts/coffee-break_benchmark.md"
               }
             }
           }
@@ -173,12 +173,12 @@
   },
   "active": "9f5f562a4d135a12",
   "lastOpenFiles": [
+    "content/posts/coffee-break_rrm.md",
     "static/img/thesesimplewords.png",
     "static/img/pandora.png",
     "static/Pasted image 20230319152038.png",
     "static/img/DCAreddit2.png",
     "content/posts/coffee-break_benchmark.md",
-    "content/posts/coffee-break_rrm.md",
     "content/posts/notes_cap13_loc-services.md",
     "static/img/shift.jpg",
     "content/posts/wifi_channel.md",
@@ -187,7 +187,6 @@
     "static/img/nuclear_terminal_clear.jpg",
     "static/img/nuclear_terminal - Copia.jpg",
     "static/img/DCAreddit1.png",
-    "static/img/retrofuturism.jpg",
     "content/posts/cheatsheet.md",
     "content/posts/note-taking_obsidian.md",
     "content/posts/introduction.md",
