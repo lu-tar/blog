@@ -5,7 +5,7 @@ draft: false
 tags: ["wireless", "rrm", "dca", "power", "channel", "design", "tpc"]
 categories: ["coffee-break"]
 cover:
-  image: img/nuclear_terminal.jpg
+  image: img/nuclear_terminal.png
   alt: ''
   caption: ''
 ShowToc: true

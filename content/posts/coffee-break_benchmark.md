@@ -1,7 +1,7 @@
 ---
 title: "Coffee-break: application stress-test"
 date: 2023-03-19T14:26:45+02:00
-draft: false
+draft: true
 tags: ["wireless", "application", "real-time", "stress-test", "benchmark", "design"]
 categories: ["coffee-break"]
 cover:
