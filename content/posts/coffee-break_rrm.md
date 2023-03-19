@@ -63,4 +63,4 @@ Therefore:
 
 ## Last but not the least
 This is the comment under the Reddit Guy post that sparked the entire article
-![](/static/img/thesesimplewords.png)
+![](/img/thesesimplewords.png)
