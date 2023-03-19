@@ -1,8 +1,8 @@
 ---
-title: "A coffee-break article about RRM"
+title: "A coffee break article about RRM"
 date: 2023-03-18T18:10:11+02:00
 draft: false
-tags: ["wireless", "rrm", "dca", "power", "channel", "design", "tpc"]
+tags: ["wireless", "rrm", "dca", "power", "channel", "design", "tpc", "arm"]
 categories: ["coffee-break"]
 cover:
   image: img/nuclear_terminal.png
