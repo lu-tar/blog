@@ -32,7 +32,7 @@ and still from Cisco
 So from the get go the IT manager who used access points like the 1242ag for 10 years is greeted with innovative, life-freeing algorithms and decides to invest tens of thousands of money in the next generation of wireless controllers to renew the Wi-Fi infrastructure of the 2000s to one of the 2080s. A pair of WLC and 50 access points are sold and installed, these specific numbers will become useful later in the article. Remember that *there is a built-in Radio Frequency (RF) engineer* inside the controller. How much do they pay him/her? Can he/she go on vacation and how did he/she win an award? Is there a competition for radio resource management? We will never know.
 
 After the WLC, access point installation and configuration is finished, the RRM is tuned following the customer feedbacks and often times parts of the configuration are left *defaults*. All is good, test on-site are flawless, if there is time left we even do an RF site survey and then the project is finally ready for production. At this point the wireless infrastructure feels like those retro-futurism posters of the 80s imagining the future decades.
-![](/static/img/retrofuturism.png)
+![](/img/retrofuturism.png)
 
 Our managers are happy, customer is happy, the sales guy gets a promotion and marketing team newsletters are flying all around pumping up the hype for the project, everybody is shaking hands with each other, maybe hugging. Good times.
 
@@ -41,7 +41,7 @@ Weeks, months or maybe years pass and the customer starts complaining about drop
 >About halfway through the deployment, I was getting complaints. Dropped connections, poor performance, etc... I went to investigate and I had APs channel overlapping each other and in some cases multiple, all on the same channel and autopowered down to the minimum. In addition, the 2.4 radios were also stepping on each other.
 
 Now the Pandora's box is opened and after months from the installation the root cause or cause**s** of the issue can hide behind a lot of things: a not optimal design from the start, a misconfiguration, a software or hardware bug, a new alarm or video surveillance system, the type of materials on the shelves or the positioning of the racks themselves, a change on the LAN infrastructure like a new firewall or a WAN problem that impacts the user experience. The list goes on.
-![](/static/img/pandora.png)
+![](/img/pandora.png)
 
 The troubleshooting starts and you stumble over the RRM. You try to read the documentation and configure it properly, but there is always something that is statically configured from the installation for one reason or another, whether it is the transmission power, the channels range or the bandwidth. At the end the Reddit Guy finds that the "static path" is the better solution for his campus, making it clear that the design was done with Ekahau and not by hand drawing the ap coverage on the floor plan.
 >I ended up dropping the them all down to 20Mhz channels and statically setting radios after surveying the areas. Turned off 2.4 everywhere unless it's specifically requested and manually adjusted power levels for the AP's that turned themselves all the way down for no apparent reason. Still tuning in some areas.
