@@ -4,22 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "422f21c1944efbfd",
+        "id": "130d36f393f08afa",
         "type": "tabs",
         "children": [
           {
-            "id": "b345adc41e514778",
+            "id": "bf5b2f761424188e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/cheatsheet.md",
+                "file": "content/posts/coffee-break_rrm.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2e99a3017e480af6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/coffee-break_benchmark.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9f5f562a4d135a12",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/coffee-break_rrm.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/cheatsheet.md",
+                "file": "content/posts/coffee-break_rrm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/cheatsheet.md",
+                "file": "content/posts/coffee-break_rrm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/cheatsheet.md"
+                "file": "content/posts/coffee-break_rrm.md"
               }
             }
           }
@@ -146,17 +171,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b345adc41e514778",
+  "active": "9f5f562a4d135a12",
   "lastOpenFiles": [
-    "content/posts/note-taking_obsidian.md",
+    "static/img/thesesimplewords.png",
+    "static/img/pandora.png",
+    "static/Pasted image 20230319152038.png",
+    "static/img/DCAreddit2.png",
+    "content/posts/coffee-break_benchmark.md",
+    "content/posts/coffee-break_rrm.md",
     "content/posts/notes_cap13_loc-services.md",
+    "static/img/shift.jpg",
     "content/posts/wifi_channel.md",
+    "static/img/retrofuturism.png",
+    "static/img/nuclear_terminal.png",
+    "static/img/nuclear_terminal_clear.jpg",
+    "static/img/nuclear_terminal - Copia.jpg",
+    "static/img/DCAreddit1.png",
+    "static/img/retrofuturism.jpg",
+    "content/posts/cheatsheet.md",
+    "content/posts/note-taking_obsidian.md",
     "content/posts/introduction.md",
     "content/posts/hugo_netlify.md",
     "content/posts/notes_arch_encore.md",
-    "static/img/5channels.png",
     "img/80211spectversus.png.md",
-    "img/80211acspectavg.PNG.md",
-    "static/img/spectral_dsss.png"
+    "img/80211acspectavg.PNG.md"
   ]
 }

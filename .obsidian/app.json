@@ -5,7 +5,6 @@
   "useMarkdownLinks": false,
   "spellcheck": true,
   "spellcheckLanguages": [
-    "it",
     "en-US"
   ],
   "readableLineLength": true
