@@ -1,6 +1,6 @@
 ---
-title: CLI cheatsheet
-date: 2023-02-10T14:50:53+02:00
+title: index a CLI cheat sheet
+date: 2023-09-07T23:38:11+02:00
 draft: false
 tags:
   - cmd
