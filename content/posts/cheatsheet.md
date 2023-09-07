@@ -1,7 +1,7 @@
 ---
 title: CLI cheatsheet
 date: 2023-02-10T14:50:53+02:00
-draft: true
+draft: false
 tags:
   - cmd
   - command
@@ -61,7 +61,9 @@ debug capwap console cli
 ```
 show controllers dot11Radio 1 client [MAC]
 ```
-##### Cisco WLC term length zero
+
+Refer to this [guide](https://www.cisco.com/c/en/us/td/docs/wireless/access_point/tech-notes/ap-radio-reset-codes.html) to dive into Radio Reset Codes or Radio RC stats.
+#### AireOS terminal length to zero
 ```
 config paging disable
 config paging enable
