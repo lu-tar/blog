@@ -4,8 +4,6 @@
   "newLinkFormat": "shortest",
   "useMarkdownLinks": false,
   "spellcheck": true,
-  "spellcheckLanguages": [
-    "en-US"
-  ],
+  "spellcheckLanguages": null,
   "readableLineLength": true
 }

@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/coffee-break_rrm.md",
+                "file": "content/posts/cheatsheet.md",
                 "mode": "source",
                 "source": false
               }
@@ -89,6 +89,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "ddf6c3f20f92f6b8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -110,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/coffee-break_rrm.md",
+                "file": "content/posts/cheatsheet.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/coffee-break_rrm.md",
+                "file": "content/posts/cheatsheet.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/coffee-break_rrm.md"
+                "file": "content/posts/cheatsheet.md"
               }
             }
           }
@@ -174,6 +182,8 @@
   "active": "9f5f562a4d135a12",
   "lastOpenFiles": [
     "content/posts/coffee-break_benchmark.md",
+    "content/posts/note-taking_obsidian.md",
+    "content/posts/hugo_netlify.md",
     "content/posts/coffee-break_rrm.md",
     "static/img/thesesimplewords.png",
     "static/img/pandora.png",
@@ -188,9 +198,7 @@
     "static/img/nuclear_terminal - Copia.jpg",
     "static/img/DCAreddit1.png",
     "content/posts/cheatsheet.md",
-    "content/posts/note-taking_obsidian.md",
     "content/posts/introduction.md",
-    "content/posts/hugo_netlify.md",
     "content/posts/notes_arch_encore.md",
     "img/80211spectversus.png.md",
     "img/80211acspectavg.PNG.md"
