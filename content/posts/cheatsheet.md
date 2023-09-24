@@ -23,7 +23,7 @@ I will try my best to keep this article up to date, incorporating the latest tip
 ### Cisco switch 
 #### Stack
 You can login to individual switches that belong to one stack by using the session command
-```
+```text
 switch-1#session 2
 switch-1-2#
 ```
@@ -59,7 +59,7 @@ Interfaces that will be enabled at the next timeout:
 ### Cisco 9800
 #### Troubleshooting SSO
 Cisco 9800 SSO allows two Cisco 9800 Series Wireless LAN Controllers to work in an active-standby configuration, where one controller takes over if the other fails. This ensures uninterrupted network service for wireless clients. Run the commands below if any unexpected switchover was to happen:
-```
+```text
 term len 0
 dir all | i cor
 show proc cpu sorted | i CPU
@@ -75,7 +75,7 @@ show logging process stack_mgr internal
 ```
 #### 9800-CL VM upgrading and profiling
 When updating a controller, pay attention to the resources to allocate to it because they may increase from one version to another.
-```
+```text
 show platform software system all
 ```
 
@@ -85,16 +85,16 @@ To avoid stability and performance issues, it’s advisable **to fully reserve t
 
 For 17.4 and later releases, this step is mandatory for the upgrade to be persisitent. If you do not click Commit, the auto-timer terminates the upgrade operation after 6 hours, and the controller reverts back to the previous image.
 
-```
+```text
 show version | in Installation mode is
 ```
 
 Per controllare lo stato dell'installazione:
-```
+```text
 show install summary
 ```
 Output:
-```
+```text
 mon-a2-wlc-01#show install summary 
 [ Chassis 1/R0 2/R0 ] Installed Package(s) Information:
 State (St): I - Inactive, U - Activated & Uncommitted,
@@ -112,29 +112,29 @@ Auto abort timer: inactive
 ---
 ### Cisco AP
 ##### Reset configuration
-```
+```text
 clear capwap private-config  
 clear lwapp private-config  
 reset
 ```
 ##### Unlock CLI commands like reload
 It's an hidden command!
-```
+```text
 debug capwap console cli
 ```
 ##### Client channel bandwidth from access point
-```
+```text
 show controllers dot11Radio 1 client [MAC]
 ```
 
 Refer to this [guide](https://www.cisco.com/c/en/us/td/docs/wireless/access_point/tech-notes/ap-radio-reset-codes.html) to dive into Radio Reset Codes or Radio RC stats.
 ##### AireOS terminal length to zero
-```
+```text
 config paging disable
 config paging enable
 ```
 ##### TAC AP (IOS-XE) side debugging
-```
+```text
 AP# config ap client-trace address add <client_MAC-address>
 AP# config ap client-trace filter all enable
 AP# config ap client-trace output console-log enable
@@ -160,11 +160,11 @@ Use these commands to troubleshoot and verify RRM behavior:
 - **radar**—Enables debugging for the RRM radar detection/avoidance protocol.
 - **rf-change**—Enables debugging for RRM RF changes.
 #### Term length to zero
-```
+```text
 config paging disable
 ```
 
-```
+```text
 config paging enable
 ```
 
@@ -185,7 +185,7 @@ config password-cleartext enable
 #### Exclusion list
 
 See a list of clients that have been dynamically excluded, by entering this command:  
-```
+```text
 show exclusionlist
 ```
 
@@ -211,7 +211,7 @@ Debug client:
 
 BSSID table: `show ap bss-table`
 - `show cluster bss-table | include [SSID NAME]`
-```
+```text
 show cluster bss-table | include MAGAZZINO
 ```
 ```
@@ -228,7 +228,7 @@ LIST CLIENTS
 LIST ACCESS POINTS 
 - `show aps | i AP-28`
 #### Channel occupation with show ap debug radio-stats 0 or 1
-```
+```text
 AP_6_A# show ap debug radio-stats 1 | include Busy
 Channel Busy 1s                     29
 Channel Busy 4s                     30
@@ -247,29 +247,29 @@ Current Noise Floor                 96
 
 ### Mobility controller
 #### Access-list and firewall
-```
+```text
 show ap database
 show ap database | include Padova
 show user | include 172.20.48.49
 ```
 
-```
+```text
 // List connection from and to AP's clients
 show datapath session ap-name RAP_d0d3e0cbb43e_Padova table | include 172.20.48.49
 show datapath session ap-name RAP_d0d3e0cbb43e_Padova table | include 172.20.48.49 | include 3389
 ```
 
-```
+```text
 // List the ACLs for a role
 show rights [role]
 ```
 
-```
+```text
 // Look at counters incrementing
 show acl hits 
 ```
 
-```
+```text
 show datapath session ap-name RAP_d0d3e0cbb43e_Padova table | include 172.20.48.49 | include 3389
 show acl hits
 ```
@@ -284,7 +284,7 @@ or
 ## HP Procurve
 ### Spanning tree
 Topology change da output `show spanning-tree`
-```
+```text
   STP Enabled   : Yes
   Force Version : MSTP-operation
   IST Mapped VLANs : 1-4094
@@ -312,7 +312,7 @@ This counter is maintained on a per-CIST per-port and on a per-MSTI per-port bas
 ---
 ## WinŽøŽ
 ### Grep exclude
-```
+```bash
 findstr /v ASSOC 301181-AP01.txt > AP01.txt
 ```
 ### Netsh wireless stats
@@ -325,6 +325,6 @@ findstr /v ASSOC 301181-AP01.txt > AP01.txt
 
 ### Recursive ping with timestamp
 Da Powershell: 
-```
+```bash
 ping.exe -t 8.8.8.8|Foreach{"{0} - {1}" -f (Get-Date),$_}
 ```
