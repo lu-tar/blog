@@ -11,7 +11,7 @@ cover:
   image: img/index.png
   alt: ""
   caption: ""
-ShowToc: false
+ShowToc: true
 author:
   - Luca
 ---
@@ -29,6 +29,9 @@ switch-1-2#
 ```
 Where as session 2 is the second switch, so session 3 for the third switch etc.
 #### Error disable timer
+
+Default 600 s
+
 ```text
 IT-MZI-SSS-3FU-D4-SW047#sh errdisable recovery 
 ErrDisable Reason            Timer Status
