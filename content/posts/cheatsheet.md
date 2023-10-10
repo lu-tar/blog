@@ -20,6 +20,26 @@ Welcome to *index*, we'll explore useful Command Line Interface (CLI) commands f
 I will try my best to keep this article up to date, incorporating the latest tips and commands.
 ## Cisco
 
+### AP predowload and upgrade monitoring
+Configuration > Tags > Flex > General > Efficient Image Upgrade
+
+Configuration > Wireless > All Access Points > Select Action (top right) > AP Image Management > Predownload Image
+
+Efficient Image upgrade is an efficient way of predownloading the image to the APs. It works similar to primary - subordinate model. An AP per model becomes the primary AP and downloads image from the controller through the WAN link. Once the primary AP has the downloaded image, the subordinate APs starts downloading the image from the primary AP. In this way, WAN latency is reduced. Primary AP selection is dynamic and random. A maximum of three subordinate APs per AP model can download the image from the primary AP.
+
+The following output displays the primary AP.
+```
+show ap master list
+```
+
+The following output shows that the primary AP has started predownloading the image.
+```
+show ap image
+```
+
+To check if Flexefficient image upgrade is enabled in the AP, use the `show capwap client rcb` command on the AP console.
+
+
 ### Troubleshooting Cisco 9800 SSO
 Cisco 9800 SSO allows two Cisco 9800 Series Wireless LAN Controllers to work in an active-standby configuration, where one controller takes over if the other fails. This ensures uninterrupted network service for wireless clients. Run the commands below if any unexpected switchover was to happen:
 ```
