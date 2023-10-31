@@ -18,6 +18,46 @@ author:
 # `index v1.0`
 Welcome to *index*, we'll explore useful Command Line Interface (CLI) commands for troubleshooting with a focus on three these vendors: Cisco, Aruba, and Palo Alto.
 I will try my best to keep this article up to date, incorporating the latest tips and commands.
+
+#### *Useful wireless-related links:*
+
+- General troubleshooting
+	- [Cheat Sheet Common Wireless Issues - Cisco](https://www.cisco.com/c/en/us/support/docs/wireless/5508-wireless-controller/200072-Cheat-Sheet-Common-Wireless-issues.html)
+	- [Understanding Debug Client on Wireless LAN Controllers (WLCs) - Cisco](https://www.cisco.com/c/en/us/support/docs/wireless/aironet-1200-series/100260-wlc-debug-client.html#eap_auth)
+	- [Troubleshooting user connectivity issues on Instant AP. - Airheads Community](https://community.arubanetworks.com/t5/Controllerless-Networks/Troubleshooting-user-connectivity-issues-on-Instant-AP/m-p/79610/highlight/true#M1969)
+	- [802.11 Association Status, 802.11 Deaut... - Cisco Community](https://community.cisco.com/t5/wireless-mobility-documents/802-11-association-status-802-11-deauth-reason-codes/ta-p/3148055)
+	- [Wireless Troubleshooting Tools - WCAE/WLCCA/Telemetry - Cisco DevNet](https://developer.cisco.com/docs/wireless-troubleshooting-tools/)
+	- [Wireless Software Matrix](https://www.cisco.com/c/en/us/td/docs/wireless/compatibility/matrix/compatibility-matrix.html)
+	- [Cisco AP Channel Utilization](http://wifinigel.blogspot.com/2015/01/cisco-ap-channel-utilization.html)
+	- [Wireless Debug Analyzer](https://cway.cisco.com/tools/WirelessDebugAnalyzer/)
+	- [Bug Search Tool](https://bst.cloudapps.cisco.com/bugsearch)
+	- 
+- 802.1X e EAP
+	- [802.1X e EAP](https://wifininjas.net/2020/01/10/wn-blog-026-802-1x-eap/)
+	- [WLC Client Debug – Part 3 | mrn-cciew](https://mrncciew.com/2019/06/03/wlc-client-debug-part-3/)
+	- [Following the 802.1X AAA process with Packet Captures](https://wirelesslywired.com/2017/07/05/following-the-802-1x-aaa-process-with-packet-captures/)
+	- [Wireless 802.1X Troubleshooting – How I WI-FI](https://howiwifi.com/2020/07/19/wireless-802-1x-troubleshooting/)
+- Data rates
+	- [MCS table](https://mcsindex.net/)
+	- [Client Troubleshooting – Unsupported Data Rates | CCIE Wireless (v3) Study Notes](https://cciewirelessnotes.wordpress.com/2015/09/15/client-troubleshooting-unsupported-data-rates/)
+- OTA e pcap
+	- [AP sniffer mode](https://www.cisco.com/c/it_it/support/docs/wireless/catalyst-9800-series-wireless-controllers/217057-configure-access-point-in-sniffer-mode-o.html)
+	- [Configure Packet Captures on AireOS WLC - Cisco](https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/211342-packet-captures-on-aireos-wlc.html)
+	- [Wireshark coloring rules for wifi](https://support.metageek.com/hc/en-us/articles/204425074-Eye-P-A-Coloring-Rules-for-Wireshark)
+- AAA
+	- [AAA Return or Response Codes - Cisco Community](https://community.cisco.com/t5/wireless-mobility-documents/aaa-return-or-response-codes/ta-p/3149403)
+- Cellular uplink
+	- [Support for 4G USB Modems](https://www.arubanetworks.com/techdocs/ArubaOS_87_Web_Help/Content/arubaos-solutions/rap/prov-4g-usb-rap.htm) - Aruba
+	- [3G/4G Uplink](https://www.arubanetworks.com/techdocs/Instant_40_Mobile/Advanced/Content/UG_files/Uplink_conf/ConfiguringCellularUplinks.htm) - Aruba
+- Logs
+	- [Cisco Wireless LAN Controller Software - Error and System Messages - Cisco](https://www.cisco.com/c/en/us/support/wireless/wireless-lan-controller-software/products-system-message-guides-list.html)
+- VOIP
+	- [How to get your 8821/792x wireless phones performing reliably - Cisco](https://www.cisco.com/c/en/us/support/docs/collaboration-endpoints/wireless-ip-phone-8821/214215-how-to-get-your-8821-792x-wireless-phone.html)
+- Talks, webinars
+	- [Wireless LAN Professionals](https://wlanprofessionals.com/)
+
+---
+
 ## Cisco
 
 ### Cisco switch 
