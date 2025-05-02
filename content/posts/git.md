@@ -60,6 +60,10 @@ Merging dev files to main
  - you need to read plus and minus symbols with the direction of files in mind
  - not alway plus means adding code
 
+ - `git diff --staged`: diff staged and unstaged files
+ - `git diff [commitid] [commitid]` or `git diff [commitid]..[commitid]`: diff between commits
+ - `git stash`
+
 ## Hooks folder
 Managing action triggers before after push or commit ecc.
 
