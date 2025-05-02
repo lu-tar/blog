@@ -37,11 +37,16 @@ Work in progress..
 Coding > Adding code > Code is in STAGING AREA > Commit code > Push to GitHub
 ```
 
+Remember that the HEAD is the pointer.
+
 - `git init`
 - `git status`
 - `git add .` or `git add main.py`
+
 - `git log`: commit ID, author, date
-  - `git log --oneline`
+  - `git log --oneline`: lookup the hash ID
+
+### Commit
 - `git commit -m "message" -m "additional notes"` atomic changes
   - You can't switch branches without commits
   - Check the stashing of files
@@ -51,32 +56,39 @@ Each commits are linked to the previous commit.
 Check HEAD to show where the code is pointing.
 
 - `git config --global`: user.name, user.email
-- `git branch branch-name`
-  - `git switch -c branch-name`
-  - `git checkout -d branch-name`
+
+### Branching
+- `git branch branch-name`: creating new branch
+  - `git switch -c branch-name`: build a branch and move to it
+  - `git checkout -d branch-name`: build a branch and move to it
 - `git checkout dev-branch` or `git switch`
-- `git checkout [ hash ]`
 You can move stashed code between branches, check `git stash`
 
-Merging dev files to main
+### Checkout
+- `git checkout [ hash ]`: move between commits (use hash id) or branches
+- Moving back to the previous commit using `git reflog` or `git checkout branch-name`
+- `git log --oneline` to check the hash
+
+### Merging dev files to main
 - `git checkout main`: not only used for merging, you can move between commits with checkout
 - `git merge dev`
 - `git branch -d dev`: Deleting the branch
 
-Diff
+### Diff
 - `git diff`: diff between staged and unstaged of the same files or between commits or between branch of the same file
   - you need to read plus and minus symbols with the direction of files in mind
   - not alway plus means adding code
   - `git diff --staged`: diff staged and unstaged files
   - `git diff [commitid] [commitid]` or `git diff [commitid]..[commitid]`: diff between commits
 
-Stashing 
+### Stashing 
 - `git stash`: temporary way to save changes
   - `git stash pop`: bring up stashed code
   - `git stash list`
   - `git stash apply`: to apply a specific stash, use stash list to see the id
 
 - `git restore`: go back of a commit to undo the current changes
+
 
 
 ## Hooks folder
