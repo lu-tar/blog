@@ -42,8 +42,13 @@ Coding > Adding > | STAGING AREA | > Commit > Push > GitHub
 - `git commit -m "message" -m "additional notes"` atomic changes
 
 Each commits are linked to the previous commit.
+Check HEAD to show where the code is pointing.
 
 - `git config --global` : user.name, user.email
+- `git branch branch-name`
+ - `git switch -c branch-name`
+ - `git checkout -d branch-name`
+- `git checkout dev-branch` or `git switch`
 
 ## Hooks folder
 Managing action triggers before after push or commit ecc.
