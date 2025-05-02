@@ -31,24 +31,34 @@ This is a collection of notes to track the logic behind code versioning in gener
 
 ## Actions
 ```
-Coding > Adding > | STAGING AREA | > Commit > Push > GitHub
+Coding > Adding code > Code is in STAGING AREA > Commit code > Push to GitHub
 ```
 
 - `git init`
 - `git status`
 - `git add .` or `git add main.py`
-- `git log` : commit ID, author, date
+- `git log`: commit ID, author, date
  - `git log --oneline`
 - `git commit -m "message" -m "additional notes"` atomic changes
 
 Each commits are linked to the previous commit.
 Check HEAD to show where the code is pointing.
 
-- `git config --global` : user.name, user.email
+- `git config --global`: user.name, user.email
 - `git branch branch-name`
  - `git switch -c branch-name`
  - `git checkout -d branch-name`
 - `git checkout dev-branch` or `git switch`
+
+Merging dev files to main
+- `git checkout main`
+- `git merge dev`
+
+- `git branch -d dev`: Deleting the branch
+
+- `git diff`: diff between staged and unstaged of the same files or between commits or between branch of the same file
+ - you need to read plus and minus symbols with the direction of files in mind
+ - not alway plus means adding code
 
 ## Hooks folder
 Managing action triggers before after push or commit ecc.
