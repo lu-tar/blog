@@ -51,6 +51,8 @@ Remember that the HEAD is the pointer.
   - You can't switch branches without commits
   - Check the stashing of files
   - `git restore`: undo a commit
+- `git commit -am "message`
+
 
 Each commits are linked to the previous commit.
 Check HEAD to show where the code is pointing.
@@ -73,6 +75,8 @@ You can move stashed code between branches, check `git stash`
 - `git checkout main`: not only used for merging, you can move between commits with checkout
 - `git merge dev`
 - `git branch -d dev`: Deleting the branch
+- After branching is usual to do a `commit`
+
 
 ### Diff
 - `git diff`: diff between staged and unstaged of the same files or between commits or between branch of the same file
@@ -89,6 +93,19 @@ You can move stashed code between branches, check `git stash`
 
 - `git restore`: go back of a commit to undo the current changes
 
+### Rebase
+Powerful merge tool. Be aware. `git rebase` takes the branch and attach it to the last commit of the base branch.
+
+```text
+main ---- M1 ---- M2 ---- M3
+          \____ bugfix ____ B1
+
+After rebase
+
+main ---- M1 ---- M2 ---- M3 ---- B1
+```
+
+Only use it from the side branch like a bug fix. After you checkout in side branch then you can go with: `git rebase master`
 
 
 ## Hooks folder
