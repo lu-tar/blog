@@ -26,8 +26,7 @@ From Wikipedia - The source code for Git refers to the program as "the informati
 This is a collection of notes to track the logic behind code versioning in general and git. Not a trusful guide.
 
 ## Links
-
-Work in progress..
+- [learngitbranching.js.org](https://learngitbranching.js.org/)
 
 ## .gitconfig
 Work in progress..
@@ -131,7 +130,9 @@ Only use it from the side branch like a bug fix. After you checkout in side bran
   - `git push origin main` - without the `-u` you are not setting the upstream branch and the next push will fail 
   - `git push --set-upstream origin main`
 
-
+#### Pull code
+- `git pull`: download code and information
+- `git fetch`: download only information
 
 ## Hooks folder
 Managing action triggers before after push or commit ecc.
