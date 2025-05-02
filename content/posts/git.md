@@ -65,6 +65,8 @@ Check HEAD to show where the code is pointing.
   - `git checkout -d branch-name`: build a branch and move to it
 - `git checkout dev-branch` or `git switch`
 You can move stashed code between branches, check `git stash`
+- `git branch -M newname`: renaming branch
+
 
 ### Checkout
 - `git checkout [ hash ]`: move between commits (use hash id) or branches
@@ -106,6 +108,29 @@ main ---- M1 ---- M2 ---- M3 ---- B1
 ```
 
 Only use it from the side branch like a bug fix. After you checkout in side branch then you can go with: `git rebase master`
+
+
+### Remote repository
+
+- `git remote` - Shows configured remotes.
+- `git remote -v` - Shows remotes with their respective URLs.
+
+- `git remote add <name> <url>` - Adds a new remote.
+  - `origin` name of remote repository
+- `git remote rename <old> <new>` - Renames a remote.
+- `git remote remove <name>` - Removes a remote.
+- `git remote set-url <name> <new-url>` - Changes the URL of a remote.
+
+- `git remote show <name>` - Details about a remote.
+- `git remote prune <name>` - Removes obsolete references.
+- `git remote update` - Updates all configured remotes.
+
+#### Pushing code
+
+- `git push -u origin main` - pushing a branch to the remote branch origin saving origin as a upstream of main.
+  - `git push origin main` - without the `-u` you are not setting the upstream branch and the next push will fail 
+  - `git push --set-upstream origin main`
+
 
 
 ## Hooks folder
