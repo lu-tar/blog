@@ -1,12 +1,14 @@
 ---
 title: Git, the information manager from hell
-date: 2023-09-07T23:38:11+02:00
+date: 2025-02-05T13:14:00+02:00
 draft: false
 tags:
   - cmd
   - command
+  - git
 categories:
   - cheat sheet
+  - notes
 cover:
   image: img/pipes-smaller.jpg
   alt: ""
