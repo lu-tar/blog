@@ -51,7 +51,7 @@ Remember that the HEAD is the pointer.
   - Check the stashing of files
   - `git restore`: undo a commit
 - `git commit -am "message`
-
+- ` git commit --amend -m "git notes, pull code`change the name of the last commit message
 
 Each commits are linked to the previous commit.
 Check HEAD to show where the code is pointing.
