@@ -40,6 +40,8 @@ Coding > Adding code > Code is in STAGING AREA > Commit code > Push to GitHub
 - `git log`: commit ID, author, date
  - `git log --oneline`
 - `git commit -m "message" -m "additional notes"` atomic changes
+ - You can't switch branches without commits
+ - Check the stashing of files
 
 Each commits are linked to the previous commit.
 Check HEAD to show where the code is pointing.
