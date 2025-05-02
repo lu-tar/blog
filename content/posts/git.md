@@ -41,10 +41,11 @@ Coding > Adding code > Code is in STAGING AREA > Commit code > Push to GitHub
 - `git status`
 - `git add .` or `git add main.py`
 - `git log`: commit ID, author, date
- - `git log --oneline`
+  - `git log --oneline`
 - `git commit -m "message" -m "additional notes"` atomic changes
- - You can't switch branches without commits
- - Check the stashing of files
+  - You can't switch branches without commits
+  - Check the stashing of files
+  - `git restore`: undo a commit
 
 Each commits are linked to the previous commit.
 Check HEAD to show where the code is pointing.
@@ -54,21 +55,29 @@ Check HEAD to show where the code is pointing.
   - `git switch -c branch-name`
   - `git checkout -d branch-name`
 - `git checkout dev-branch` or `git switch`
+- `git checkout [ hash ]`
+You can move stashed code between branches, check `git stash`
 
 Merging dev files to main
-- `git checkout main`
+- `git checkout main`: not only used for merging, you can move between commits with checkout
 - `git merge dev`
-
 - `git branch -d dev`: Deleting the branch
 
+Diff
 - `git diff`: diff between staged and unstaged of the same files or between commits or between branch of the same file
   - you need to read plus and minus symbols with the direction of files in mind
   - not alway plus means adding code
+  - `git diff --staged`: diff staged and unstaged files
+  - `git diff [commitid] [commitid]` or `git diff [commitid]..[commitid]`: diff between commits
 
- - `git diff --staged`: diff staged and unstaged files
- - `git diff [commitid] [commitid]` or `git diff [commitid]..[commitid]`: diff between commits
- 
-- `git stash`
+Stashing 
+- `git stash`: temporary way to save changes
+  - `git stash pop`: bring up stashed code
+  - `git stash list`
+  - `git stash apply`: to apply a specific stash, use stash list to see the id
+
+- `git restore`: go back of a commit to undo the current changes
+
 
 ## Hooks folder
 Managing action triggers before after push or commit ecc.
