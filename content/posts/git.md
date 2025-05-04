@@ -157,3 +157,16 @@ Pull: pulling from the agent installed into the deployment servers to the reposi
   - actual state
 
 Flux and Argo
+  - Flux: A GitOps operator for Kubernetes that continuously reconciles the desired state from Git with the cluster, enabling automated deployments.
+  - Argo: A suite of Kubernetes-native tools for workflows, events, and GitOps; Argo CD is the GitOps component that synchronizes Git repositories with Kubernetes clusters for declarative application management.
+
+
+
+
+
+
+
+
+
+
+
