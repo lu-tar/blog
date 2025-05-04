@@ -142,4 +142,18 @@ Managing action triggers before after push or commit ecc.
 ## Workflow
 ![](/img/gitflow.png)
 
+## GitOps
+The creation of servers both in the cloud or on premise, is pushed via Terraform or Ansible configurations
+- manifests
+- playbooks
 
+The previous workflow is applied to these configurations therefore they are testes, rewied before the get applied in any environment.
+ 
+There are two types of deployment
+
+Push: pushing from the pipeline to the deployment servers
+Pull: pulling from the agent installed into the deployment servers to the repository
+  - desired state
+  - actual state
+
+Flux and Argo
