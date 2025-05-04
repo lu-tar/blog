@@ -156,6 +156,10 @@ Managing action triggers before after push or commit ecc.
 ## Workflow
 ![](/img/gitflow.png)
 
+Github Actions
+- on push
+- live testing on github servers or locally
+
 ## GitOps
 The creation of servers both in the cloud or on premise, is pushed via Terraform or Ansible configurations
 - manifests
@@ -171,3 +175,7 @@ Pull: pulling from the agent installed into the deployment servers to the reposi
   - actual state
 
 Flux and Argo
+
+## DevOps flow
+![](img/devops_flow.jpg)
+
