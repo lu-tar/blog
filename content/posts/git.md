@@ -140,6 +140,6 @@ Managing action triggers before after push or commit ecc.
 
 
 ## Workflow
-![](img/gitflow.png)
+![](/img/gitflow.png)
 
 
