@@ -59,6 +59,20 @@ Check HEAD to show where the code is pointing.
 
 - `git config --global`: user.name, user.email
 
+
+### Reverting a commit (come tornare indietro di commit)
+- `git revert HEAD` annull the last commit
+- `git revert <commit_hash>` annull a specific commit 
+generates a new commit by default
+safer for remote branches
+
+### Resetting a commit (come tornare indietro di commit)
+less safe for shared branches than revert
+- `git reset --soft HEAD~1` removes the last commit but **keeps the changes staged** (in the index).
+- `git reset --mixed HEAD~1` removes the last commit and **unstages the changes**, but **keeps them in the working directory**.
+This is the default behavior if you omit the option.
+- `git reset --hard HEAD~1` Removes the last commit and **discards all changes** in the working directory and staging area. ⚠️ *This is destructive—use with caution!*
+
 ### Branching
 - `git branch branch-name`: creating new branch
   - `git switch -c branch-name`: build a branch and move to it
