@@ -23,7 +23,8 @@ From Wikipedia - The source code for Git refers to the program as "the informati
 
 ## Summary
 
-This is a collection of notes to track the logic behind code versioning in general and git. Not a trusful guide.
+Summarizing old collections of notes to track the logic behind code versioning in general and git. Not a trustful guide.
+
 
 ## Links
 - [learngitbranching.js.org](https://learngitbranching.js.org/)
@@ -136,4 +137,9 @@ Only use it from the side branch like a bug fix. After you checkout in side bran
 
 ## Hooks folder
 Managing action triggers before after push or commit ecc.
+
+
+## Workflow
+![](img/gitflow.png)
+
 
