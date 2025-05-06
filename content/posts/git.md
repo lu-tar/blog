@@ -73,6 +73,11 @@ less safe for shared branches than revert
 This is the default behavior if you omit the option.
 - `git reset --hard HEAD~1` Removes the last commit and **discards all changes** in the working directory and staging area. ⚠️ *This is destructive—use with caution!*
 
+
+### Resetting branch to origin
+- git reset --hard origin/main: deletes local changes losing unsaved changes
+
+
 ### Branching
 - `git branch branch-name`: creating new branch
   - `git switch -c branch-name`: build a branch and move to it
